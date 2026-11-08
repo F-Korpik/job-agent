@@ -10,9 +10,10 @@ def main() -> None:
     offers, errors = extract_offers(text)
     total = len(offers)
     offers = deduplicate(offers)
-    for o in offers:
+    width = len(str(len(offers)))
+    for n, o in enumerate(offers, start=1):
         sal = f"{o.salary_min}-{o.salary_max} {o.currency}" if o.salary_min else "brak widełek"
-        print(f"{o.company[:22]:22} | {o.title[:45]:45} | {o.work_mode or '?':6} | {sal}")
+        print(f"{n:>{width}} | {o.company[:22]:22} | {o.title[:45]:45} | {o.work_mode or '?':6} | {sal}")
     print(f"\n{total} ofert, {len(offers)} po deduplikacji, {len(errors)} błędów walidacji")
     for e in errors:
         print("  ", e)
