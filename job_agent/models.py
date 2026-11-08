@@ -12,6 +12,6 @@ class Offer(BaseModel):
     salary_min: int | None = None
     salary_max: int | None = None
     currency: str | None = None
-    tech: list[str] = Field(default_factory=list)
+    tags: list[str] = Field(default_factory=list)
     url: str | None = None
     portal: str = "justjoin.it"

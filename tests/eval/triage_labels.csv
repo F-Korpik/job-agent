@@ -1,0 +1,42 @@
+firma,tytul,zrodlo,decyzja,kategoria,powod,kierunkowa,pelna_tresc
+Allegro,Junior Big Data Engineer (Java / Python),allegro_careers,dobra,ok,"junior DE na GCP/BigQuery; luki: GCP/BigQuery, testy, SQL",nie,allegro_junior_big_data_engineer
+Allegro,Data Engineer - Data Platform,allegro_careers,dobra,ok,"DE mid, jakość danych i anomalie; luka: Spark (must)",nie,allegro_data_engineer_data_platform
+FarmaProm,Analytics Engineer,justjoin.it,dobra,ok,"nice-to-have pasują (API, Docker, AI, GCP); must słabo (SQL advanced, DWH, modelowanie)",nie,farmaprom_analytics_engineer
+G2A,AI Automation Engineer,justjoin.it,dobra,ok,"najlepsze dopasowanie: LLM API, integracje REST/OAuth; luki: n8n, 3 lata",nie,g2a_ai_automation_engineer
+Capgemini Polska,GenAI Engineer in Banking/Financial industry,justjoin.it,dobra,ok,"zasięg: LLM workflows pasują; brak doświadczenia w finansach (must), chmura, very good SQL",nie,capgemini_genai_engineer_banking
+Egala,"Software Engineer (Mid-level, Full-stack)",justjoin.it,zla,fullstack,"Django + React/MobX + Celery, 3–5 lat; 2/8 must",nie,egala_software_engineer_fullstack
+Momentum,Machine Learning Engineer,justjoin.it,zla,ml_klasyczne,"klasyczne ML, TensorFlow/Keras, LangChain/LlamaIndex jako must",nie,momentum_ml_engineer
+Relativity,Advanced AI Engineer,justjoin.it,zla,za_duza_luka,"agent runtime (LangGraph, MCP, Azure, K8s), 3+ lata",tak,relativity_advanced_ai_engineer
+Sii,Technical Lead — Data Science,justjoin.it,zla,lider,rola liderska,nie,
+Capgemini Invent,GCP AI Developer,justjoin.it,zla,ml_klasyczne,klasyczne ML (PyTorch/TF/Vertex),nie,
+Miele Global Services,SAP Data Engineer,justjoin.it,zla,sap,SAP/ABAP,nie,
+Sollers Consulting,Data Analyst,justjoin.it,zla,analityk,rola analityczna,nie,
+Sollers Consulting,Pricing Analyst,justjoin.it,zla,analityk,rola analityczna,nie,
+G2A,Data Analyst,justjoin.it,zla,analityk,rola analityczna,nie,
+Transition Technologies MS,DWH Analyst,justjoin.it,zla,analityk,rola analityczna,nie,
+emagine Polska,Data Analyst (Junior / Mid) - Remote - Portugal,justjoin.it,zla,analityk,rola analityczna,nie,
+cloudatus,Data Scientist / Machine Learning Engineer,justjoin.it,zla,ml_klasyczne,"data science, statystyka, R, AWS",nie,
+EPAM Systems,JIRA Service Management (JSM) Migration Engineer,justjoin.it,zla,inna_specjalizacja,Atlassian/ITSM,nie,
+EPAM Systems,AI-Augmented IAM Security Engineer,justjoin.it,zla,security,IAM,nie,
+EPAM Systems,APIs and Integration Engineer,justjoin.it,zla,inna_specjalizacja,webMethods/MFT,nie,
+Orange Polska,Network Automation Leader for Microwave technology,justjoin.it,zla,lider,"rola liderska, Java",nie,
+Andersen,SIEM Administrator / Engineer,justjoin.it,zla,security,SIEM,nie,
+Accenture,Secure AI Innovation Engineer,justjoin.it,zla,security,security,nie,
+Accenture,Application Security Specialist,justjoin.it,zla,security,application security,nie,
+Andersen,QA Automation Engineer (Python),justjoin.it,zla,qa,QA bankowe (Appium),nie,
+emagine Polska,AWS Administrator,justjoin.it,zla,infra_ops,infra/ops,nie,
+C&F,Azure Support Engineer,justjoin.it,zla,infra_ops,infra/ops,nie,
+emagine Polska,Join our Talent Pool - Cloud Operations / Platform,justjoin.it,zla,infra_ops,infra/ops,nie,
+AVSystem,Site Reliability Engineer,justjoin.it,zla,infra_ops,infra/ops,nie,
+emagine Polska,Data Engineer (Airflow / Snowflake),justjoin.it,zla,za_duza_luka,Airflow/Snowflake/AWS,nie,
+Sii,Data Engineer with Microsoft Azure,justjoin.it,zla,za_duza_luka,Spark/Azure/Databricks/Kafka,nie,
+Xebia,GCP Data Engineer,justjoin.it,zla,za_duza_luka,GCP/BigQuery/PySpark/Airflow/dbt,tak,
+emagine Polska,Junior Data Engineer – Oracle Cloud (OCI) | International Project (Chile),justjoin.it,zla,za_duza_luka,"OCI, projekt w Chile",nie,
+Veeva Systems,Associate Technical Consultant (Entry-Level),justjoin.it,zla,inna_specjalizacja,wsparcie/Salesforce,nie,
+EPAM Systems,Python Trainee,justjoin.it,zla,ponizej_minimum,"program trainee, wynagrodzenie prawdopodobnie poniżej minimum",nie,
+TELTONIKA POLAND,CAN/OBD Solutions Embedded Software Developer (Mid/Senior),justjoin.it,zla,inna_specjalizacja,C/embedded,nie,
+Maisa AI,Software Engineer (Foundational AI),justjoin.it,zla,ml_research,ML research/deep learning,nie,
+emagine Polska,Computer Vision Engineer (Deep Learning),justjoin.it,zla,ml_research,deep learning,nie,
+Warsaw Hub @ Helvetia Baloise Group,SAS Application Engineer in Finance & Accounting Platforms,justjoin.it,zla,sap,"SAS/SAP, niemiecki",nie,
+emagine Polska,Transaction Monitoring Engineer,justjoin.it,zla,inna_specjalizacja,AML/finanse,nie,
+emagine Polska,"Join Our Talent Pool – Banking Data, Digital & Cyber Specialists",justjoin.it,zla,inna_specjalizacja,talent pool bankowy,nie,

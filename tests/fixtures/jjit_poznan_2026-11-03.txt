@@ -1,0 +1,71 @@
+Jobs Poznań - 20 job offers
+Super offer
+Sii
+Remote
+Technical Lead — Data Science (f/m/x) | https://justjoin.it/job-offer/sii-technical-lead---data-science-f-m-x--poznan-data-a4f57daa
+14d left | Undisclosed Salary | XGBoost, scikit-learn, NumPy, Cloud Computing, Data platforms, Pandas, Python | Mid, Permanent, Full-time
+
+FarmaProm | Poznań | Hybrid
+Specjalista ds. inżynierii analitycznej | https://justjoin.it/job-offer/farmaprom-analytics-engineer-poznan-python-37f31853
+16d left | Undisclosed Salary | SQL, Python, BigQuery, Snowflake, Redshift | Mid, Permanent, Full-time
+
+FarmaProm | Poznań | Hybrid
+Analytics Engineer | https://justjoin.it/job-offer/farmaprom-analytics-engineer-poznan-data
+4d left | Undisclosed Salary | SQL, Python, BigQuery, Snowflake, Redshift | Mid, Permanent, Full-time
+
+FarmaProm | Poznań | Hybrid
+Analytics Engineer | https://justjoin.it/job-offer/farmaprom-analytics-engineer-poznan-python
+5d left | Undisclosed Salary | SQL, Python, BigQuery, Snowflake, Redshift | Mid, Permanent, Full-time
+
+FarmaProm | Poznań | Hybrid
+Analytics Engineer | https://justjoin.it/job-offer/farmaprom-analytics-engineer-poznan-analytics
+4d left | Undisclosed Salary | SQL, Python, BigQuery, Snowflake, Redshift, ETL | Mid, Permanent, Full-time
+
+Miele Global Services | Poznań | Remote
+SAP Data Engineer | https://justjoin.it/job-offer/miele-global-services-sap-data-engineer--poznan-data
+10d left | 13 400 - 17 300 PLN/month | SAP, Data Engineering, SQL, ABAP, SAP BW / BW/4HANA, SAP Datasphere, Python | Mid, Permanent, Full-time
+
+Sollers Consulting | Hybrid
+Data Analyst | https://justjoin.it/job-offer/sollers-consulting-data-analyst-poznan-data
+30d left | Undisclosed Salary | Snowflake, Databricks, SQL, MS Excel, Python | Mid, Permanent, Full-time
+
+cloudatus | Remote
+Data Scientist / Machine Learning Engineer | https://justjoin.it/job-offer/cloudatus-data-scientist-machine-learning-engineer-poznan-ai-08444b6f
+27d left | 12 000 - 17 000 PLN/month | GenAI, Machine Learning, AWS, Statistics, R, Azure, Pandas, SQL, Python, Data Science | Mid, Permanent, Full-time
+
+Capgemini Invent | Hybrid
+GCP AI Developer | https://justjoin.it/job-offer/capgemini-invent-gcp-ai-developer-poznan-ai
+2d left | Undisclosed Salary | Machine Learning, MLOps, PyTorch, JAX, TensorFlow, Vertex AI, GCP | Mid, Permanent, Full-time
+
+Sollers Consulting | Hybrid
+Pricing Analyst | https://justjoin.it/job-offer/sollers-consulting-pricing-analyst-poznan-analytics
+26d left | Undisclosed Salary | pricing analytics, Generalized Linear Models, Agile, Python, R | Mid, Permanent, Full-time
+
+Egala | Office
+Software Engineer (Mid-level, Full-stack) | https://justjoin.it/job-offer/egala-software-engineer-mid-level-full-stack--poznan-python
+29d left | 10 000 - 14 000 PLN/month | CI, Git, Docker, REST, SOAP, PostgreSQL, Django, Python | Mid, Permanent, Full-time
+
+Capgemini Polska | Hybrid
+GenAI Engineer in Banking/Financial industry | https://justjoin.it/job-offer/capgemini-polska-genai-engineer-in-banking-financial-industry-poznan-ai-892d1a0b
+New | Undisclosed Salary | SQL, Python, Prompt Engineering, LLM, Agentic AI, Generative AI, AWS, Azure | Mid, Permanent, Full-time
+
+Capgemini Polska | Hybrid
+GenAI Engineer in Banking/Financial industry | https://justjoin.it/job-offer/capgemini-polska-genai-engineer-in-banking-financial-industry-poznan-ai
+2d left | Undisclosed Salary | Cloud, AI, SQL, Python, Generative AI | Mid, Permanent, Full-time
+
+EPAM Systems | Poznan | Remote
+JIRA Service Management (JSM) Migration Engineer | https://justjoin.it/job-offer/epam-systems-jira-service-management-jsm-migration-engineer-poznan-devops
+28d left | Undisclosed Salary | Jira Service Management, ServiceNow, Atlassian Cloud, data migration, Data Mapping, Jira REST API, Automation Rules, ETL, Python, JavaScript | Mid, Any, Full-time
+
+EPAM Systems | Poznan | Remote
+AI-Augmented IAM Security Engineer | https://justjoin.it/job-offer/epam-systems-ai-augmented-iam-security-engineer-poznan-security-f37121e0
+28d left | Undisclosed Salary | Identity and Access Management, Privileged Access Management, SSO, SAML, OAuth 2.0, OpenId Connect, SCIM, LDAP | Mid, Any, Full-time
+
+Orange Polska | Hybrid
+Network Automation Leader for Microwave technology (3 listings: -devops, -python, -java) | https://justjoin.it/job-offer/orange-polska-network-automation-leader-for-microwave-technology--poznan-devops
+14d / 28d / 14d left | Undisclosed Salary | Java, Python, CI/CD, GitLab, Kubernetes | Mid, Permanent, Full-time
+
+EPAM Systems | Poznan | Remote
+APIs and Integration Engineer | https://justjoin.it/job-offer/epam-systems-apis-and-integration-engineer-poznan-erp
+28d left | Undisclosed Salary | webMethods Integration Server, Managed File Transfer (MFT), ServU Gateway, PCS Gateway, SFTP, FTPS, Python, Bash, Powershell, XML | Mid, Any, Full-time
+

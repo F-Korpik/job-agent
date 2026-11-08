@@ -1,0 +1,1088 @@
+Remote jobs - 102 job offers
+
+
+emagine Polska
+emagine Polska
+
+Warsaw
+
+Remote
+
+Data Engineer (Airflow / Snowflake)
+New
+Undisclosed Salary
+SQL
+Python
+CI/CD
+Git
+Docker
+Amazon Web Services (AWS)
+Kubernetes
+Apache Airflow
+Snowflake
+Data Engineering
+Mid
+Any
+Full-time
+Super offer
+Sii
+Sii
+
+Show profile
+Remote
+
+Technical Lead — Data Science (f/m/x)
+14d left
+Undisclosed Salary
+XGBoost
+scikit-learn
+NumPy
+Cloud Computing
+Data platforms
+Pandas
+Python
+Mid
+Permanent
+Full-time
+Momentum
+Momentum
+
+Wrocław
+
+Remote
+
+Machine Learning Engineer
+17d left
+8 330 - 12 500
+PLN/month
+Python
+TensorFlow
+Keras
+Pandas
+LLM frameworks
+matplotlib
+PyTorch
+fastapi
+Mid
+Permanent
+Full-time
+Super offer
+Sii
+Sii
+
+Show profile
+Warszawa
+
+Remote
+
+Data Engineer with Microsoft Azure (f/m/x)
+New
+Undisclosed Salary
+Python
+ETL/ELT
+Apache Spark/PySpark
+Microsoft Azure
+Databricks
+Snowflake
+Apache Kafka
+Apache Airflow
+Mid
+Permanent
+Full-time
+emagine Polska
+emagine Polska
+
+Lisbon
+
+Remote
+
+Data Analyst (Junior / Mid) - Remote - Portugal
+17d left
+Undisclosed Salary
+Data analysis
+Project Management
+SQL
+Python
+Business Intelligence (BI)
+Atlassian JIRA
+Agile
+Machine Learning (ML)
+Microsoft Power BI
+Tableau
+Mid
+Any
+Full-time
+emagine Polska
+emagine Polska
+
+New Delhi
+
+Remote
+
+Computer Vision Engineer (Deep Learning)
+New
+Undisclosed Salary
+Network
+training
+Python
+maintenance
+CI/CD
+Cloud
+Machine Learning (ML)
+Microsoft Azure
+Deployment
+TensorFlow
+Mid
+Any
+Full-time
+emagine Polska
+emagine Polska
+
+Santiago
+
+Remote
+
+Junior Data Engineer – Oracle Cloud (OCI) | International Project (Chile)
+11d left
+Undisclosed Salary
+Data Warehouse (DW)
+Python
+Business Intelligence (BI)
+Operations
+Artificial Intelligence (AI)
+Provisioning
+strategy
+Cloud
+Microsoft Platform
+Spark
+Junior
+Any
+Full-time
+C&F
+C&F
+
+Show profile
+Warszawa
+
+Remote
+
+Azure Support Engineer
+22d left
+Undisclosed Salary
+Azure DevOps
+Microsoft Azure Cloud
+Azure Databricks
+Power BI
+Azure Data Factory
+Azure Monitor
+Log Analytics
+ITIL
+CI/CD
+Mid
+Permanent
+Full-time
+G2A
+G2A
+
+Show profile
+Warszawa
+
+Remote
+
+Data Analyst
+16d left
+Undisclosed Salary
+SQL
+Python
+Tableau
+Mid
+Permanent
+Full-time
+emagine Polska
+emagine Polska
+
+London
+
+Remote
+
+Transaction Monitoring Engineer
+26d left
+Undisclosed Salary
+Risk Management
+Operations
+Data Integration
+Testing
+Financial Services
+Microsoft Platform
+Stakeholder Management
+Governance
+Customer Due Diligence (CDD)
+Anti Money Laundering (AML)
+Mid
+Any
+Full-time
+Miele Global Services
+Miele Global Services
+
+Poznań
+
+Remote
+
+SAP Data Engineer
+10d left
+13 400 - 17 300
+PLN/month
+SAP
+Data Engineering
+SQL
+ABAP
+SAP BW / BW/4HANA
+SAP Datasphere
+Python
+Mid
+Permanent
+Full-time
+Relativity
+Relativity
+
+Show profile
+Remote
+
+Advanced AI Engineer
+28d left
+188 000 - 282 000
+PLN/year
+Python
+Langchain
+Langgraph
+Large Language Models
+PostgreSQL
+Azure
+Docker
+Model Context Protocol
+RAG
+Pulumi
+Mid
+Permanent
+Full-time
+EPAM Systems
+EPAM Systems
+
+Warsaw
+
+Remote
+
+Python Trainee
+20d left
+Undisclosed Salary
+Python
+Algorithms
+Data Structures
+Databases
+Junior
+Any
+Full-time
+EPAM Systems
+EPAM Systems
+
+Gdansk
+
+Remote
+
+Python Trainee
+20d left
+Undisclosed Salary
+Problem Solving
+Python
+Algorithms
+Data Structures
+Databases
+Junior
+Any
+Full-time
+EPAM Systems
+EPAM Systems
+
+Wroclaw
+
+Remote
+
+Python Trainee
+20d left
+Undisclosed Salary
+Problem Solving
+Python
+Algorithms
+Data Structures
+Databases
+Collaboration
+Junior
+Any
+Full-time
+EPAM Systems
+EPAM Systems
+
+Krakow
+
+Remote
+
+Python Trainee
+20d left
+Undisclosed Salary
+Problem Solving
+Python
+Algorithms
+Data Structures
+Databases
+Junior
+Any
+Full-time
+TELTONIKA POLAND sp. z o.o.
+TELTONIKA POLAND sp. z o.o.
+
+Warszawa
+
+Remote
+
+CAN/OBD Solutions Embedded Software Developer (Mid/Senior) | Telematics
+25d left
+14 000 - 28 000
+PLN/month
+CAN
+C
+non-automotive sectors experience
+Mid
+Permanent
+Full-time
+emagine Polska
+emagine Polska
+
+Bucharest
+
+Remote
+
+Join Our Talent Pool – Banking Data, Digital & Cyber Specialists
+19d left
+Undisclosed Salary
+Network
+Security
+C++
+API (Application Programming Interface)
+Python
+CRM
+Artificial Intelligence (AI)
+Salesforce
+Customer Relationship Management (CRM) Suite
+Microsoft Dynamics
+Mid
+Any
+Full-time
+Super offer
+Accenture
+Accenture
+
+Show profile
+Remote
+
+Secure AI Innovation Engineer (regular/senior) (She/He/They)
+14d left
+Undisclosed Salary
+OWASP
+AI
+LLMs
+Azure
+CI/CD
+Security
+Mid
+Permanent
+Full-time
+G2A
+G2A
+
+Show profile
+Warszawa
+
+Remote
+
+AI Automation Engineer
+15d left
+Undisclosed Salary
+AI
+Mid
+Permanent
+Full-time
+cloudatus
+cloudatus
+
+Show profile
+Remote
+
+Data Scientist / Machine Learning Engineer
+27d left
+12 000 - 17 000
+PLN/month
+GenAI
+Machine Learning
+AWS
+Statistics
+R
+Azure
+Pandas
+SQL
+Python
+Data Science
+Mid
+Permanent
+Full-time
+cloudatus
+cloudatus
+
+Show profile
+Remote
+
+Data Scientist / Machine Learning Engineer
+27d left
+12 000 - 17 000
+PLN/month
+GenAI
+Machine Learning
+AWS
+Statistics
+R
+Azure
+Pandas
+SQL
+Python
+Data Science
+Mid
+Permanent
+Full-time
+Transition Technologies MS
+Transition Technologies MS
+
+Show profile
+Warszawa
+
+Remote
+
+DWH Analyst
+28d left
+Undisclosed Salary
+SQL
+DWH concepts
+ETL processes
+Data modeling
+data validation
+Power BI
+Stakeholder Communication
+Agile methodology
+Snowflake
+Power Apps
+Mid
+Permanent
+Full-time
+Xebia sp. z o.o.
+Xebia sp. z o.o.
+
+Show profile
+Remote
+
+👉 GCP Data Engineer
+21d left
+Undisclosed Salary
+GCP
+BigQuery
+PySpark
+Airflow
+DBT
+Mid
+Permanent
+Full-time
+EPAM Systems
+EPAM Systems
+
+Lodz
+
+Remote
+
+JIRA Service Management (JSM) Migration Engineer
+28d left
+Undisclosed Salary
+Jira Service Management
+ServiceNow
+data migration
+Data Mapping
+Jira REST API
+Atlassian Cloud
+ETL
+Python
+Mid
+Any
+Full-time
+EPAM Systems
+EPAM Systems
+
+Gdansk
+
+Remote
+
+JIRA Service Management (JSM) Migration Engineer
+28d left
+Undisclosed Salary
+Jira Service Management
+ServiceNow
+Atlassian Cloud
+ITSM
+data migration
+Data Mapping
+ETL
+REST API
+Python
+JavaScript
+Mid
+Any
+Full-time
+EPAM Systems
+EPAM Systems
+
+Krakow
+
+Remote
+
+JIRA Service Management (JSM) Migration Engineer
+28d left
+Undisclosed Salary
+Jira Service Management
+ServiceNow
+ITSM
+data migration
+Atlassian Administration
+Jira REST API
+Jira Automation
+Scripting
+Mid
+Any
+Full-time
+EPAM Systems
+EPAM Systems
+
+Wroclaw
+
+Remote
+
+JIRA Service Management (JSM) Migration Engineer
+28d left
+Undisclosed Salary
+Jira Service Management
+ServiceNow
+Atlassian Cloud
+Atlassian Data Center
+data migration
+ETL
+Jira REST API
+ITSM
+Python
+JavaScript
+Mid
+Any
+Full-time
+EPAM Systems
+EPAM Systems
+
+Poznan
+
+Remote
+
+JIRA Service Management (JSM) Migration Engineer
+28d left
+Undisclosed Salary
+Jira Service Management
+ServiceNow
+Atlassian Cloud
+data migration
+Data Mapping
+Jira REST API
+Automation Rules
+ETL
+Python
+JavaScript
+Mid
+Any
+Full-time
+EPAM Systems
+EPAM Systems
+
+Katowice
+
+Remote
+
+JIRA Service Management (JSM) Migration Engineer
+28d left
+Undisclosed Salary
+data migration
+Jira Service Management
+ServiceNow
+Jira REST API
+ITSM
+Python
+Mid
+Any
+Full-time
+EPAM Systems
+EPAM Systems
+
+Warsaw
+
+Remote
+
+JIRA Service Management (JSM) Migration Engineer
+28d left
+Undisclosed Salary
+Jira Service Management
+ServiceNow
+ServiceNow Scripting
+data migration
+Data Mapping
+Jira REST API
+Atlassian Cloud
+Automation Rules
+Mid
+Any
+Full-time
+AVSystem
+AVSystem
+
+Kraków
+
+Remote
+
+Site Reliability Engineer
+New
+16 600 - 24 900
+PLN/month
+Linux
+Networking
+Python
+Go
+Kubernetes
+Ansible
+Terraform
+Prometheus
+MongoDB
+Kafka
+Mid
+Permanent
+Full-time
+EPAM Systems
+EPAM Systems
+
+Krakow
+
+Remote
+
+AI-Augmented IAM Security Engineer
+28d left
+Undisclosed Salary
+Identity and Access Management
+SSO
+SAML
+OAuth 2.0
+OpenId Connect
+Privileged Access Management
+SCIM
+Powershell
+Mid
+Any
+Full-time
+EPAM Systems
+EPAM Systems
+
+Katowice
+
+Remote
+
+AI-Augmented IAM Security Engineer
+28d left
+Undisclosed Salary
+Identity and Access Management
+Privileged Access Management
+SSO
+SAML
+OAuth 2.0
+SCIM
+Python
+REST API
+Prompt Engineering
+Mid
+Any
+Full-time
+EPAM Systems
+EPAM Systems
+
+Poznan
+
+Remote
+
+AI-Augmented IAM Security Engineer
+28d left
+Undisclosed Salary
+Identity and Access Management
+Privileged Access Management
+SSO
+SAML
+OAuth 2.0
+OpenId Connect
+SCIM
+LDAP
+Mid
+Any
+Full-time
+EPAM Systems
+EPAM Systems
+
+Gdansk
+
+Remote
+
+AI-Augmented IAM Security Engineer
+28d left
+Undisclosed Salary
+Identity and Access Management
+Privileged Access Management
+SSO
+SAML
+OAuth 2.0
+OpenId Connect
+SCIM
+Mid
+Any
+Full-time
+EPAM Systems
+EPAM Systems
+
+Lodz
+
+Remote
+
+AI-Augmented IAM Security Engineer
+28d left
+Undisclosed Salary
+Identity and Access Management
+Privileged Access Management
+SAML
+OAuth 2.0
+OpenId Connect
+SCIM
+LDAP
+Powershell
+Python
+Prompt Engineering
+Mid
+Any
+Full-time
+EPAM Systems
+EPAM Systems
+
+Wroclaw
+
+Remote
+
+AI-Augmented IAM Security Engineer
+28d left
+Undisclosed Salary
+Identity and Access Management
+SSO
+SAML
+OAuth 2.0
+PAM
+LDAP
+Powershell
+Mid
+Any
+Full-time
+EPAM Systems
+EPAM Systems
+
+Warsaw
+
+Remote
+
+AI-Augmented IAM Security Engineer
+28d left
+Undisclosed Salary
+IAM
+Privileged Access Management
+SAML
+OAuth 2.0
+OpenId Connect
+SCIM
+Powershell
+REST API
+Mid
+Any
+Full-time
+emagine Polska
+emagine Polska
+
+Bucharest
+
+Remote
+
+Join our Talent Pool - Cloud Operations / Platform
+19d left
+Undisclosed Salary
+Security
+Python
+Operations
+Active Directory (AD)
+CI/CD
+Process Optimization
+Cloud
+Microsoft Platform
+Microsoft Windows Server
+Identity Access Management (IAM)
+Mid
+Any
+Full-time
+Maisa AI
+Maisa AI
+
+Manises
+
+Remote
+
+Software Engineer (Foundational AI)
+New
+Undisclosed Salary
+PyTorch depth
+Python
+vLLM
+SGLang
+quantisation
+Mid
+Permanent
+Full-time
+Warsaw Hub @ Helvetia Baloise Group
+Warsaw Hub @ Helvetia Baloise Group
+
+Show profile
+Warszawa
+
+Remote
+
+SAS Application Engineer in Finance & Accounting Platforms
+20 000 - 22 000
+PLN/month
+SAS
+SAP
+German
+SAS 9.4
+SQL
+JSON
+Rest/SOAP
+Python
+Databricks
+Mid
+Permanent
+Full-time
+Super offer
+Accenture
+Accenture
+
+Show profile
+Remote
+
+Application Security Specialist (regular/senior) (She/He/They)
+19d left
+Undisclosed Salary
+OWASP
+SQL
+Azure
+GitHub
+Java
+SAST
+AWS
+Bitbucket
+Jenkins
+injection
+Mid
+Permanent
+Full-time
+Super offer
+Accenture
+Accenture
+
+Show profile
+Remote
+
+Application Security Specialist (regular/senior) (She/He/They)
+14d left
+Undisclosed Salary
+OWASP
+SQL
+Azure
+GitHub
+Java
+SAST
+AWS
+Bitbucket
+Jenkins
+injection
+Mid
+Permanent
+Full-time
+EPAM Systems
+EPAM Systems
+
+Katowice
+
+Remote
+
+APIs and Integration Engineer
+28d left
+Undisclosed Salary
+Managed File Transfer (MFT)
+ServU Gateway
+PCS Gateway
+webMethods Integration Server
+SFTP
+FTPS
+Python
+Flat-file Transformations
+Bash
+Powershell
+Mid
+Any
+Full-time
+EPAM Systems
+EPAM Systems
+
+Gdansk
+
+Remote
+
+APIs and Integration Engineer
+28d left
+Undisclosed Salary
+Managed File Transfer
+ServU Gateway
+PCS Gateway
+webMethods Integration Server
+SFTP
+FTPS
+Python
+Bash
+Powershell
+CSV
+Mid
+Any
+Full-time
+EPAM Systems
+EPAM Systems
+
+Krakow
+
+Remote
+
+APIs and Integration Engineer
+28d left
+Undisclosed Salary
+webMethods Integration Server
+Managed File Transfer
+ServU Gateway
+PCS Gateway
+SFTP
+FTPS
+Python
+Integration Templates
+Flat-file Transformations
+Bash
+Mid
+Any
+Full-time
+EPAM Systems
+EPAM Systems
+
+Poznan
+
+Remote
+
+APIs and Integration Engineer
+28d left
+Undisclosed Salary
+webMethods Integration Server
+Managed File Transfer (MFT)
+ServU Gateway
+PCS Gateway
+SFTP
+FTPS
+Python
+Bash
+Powershell
+XML
+Mid
+Any
+Full-time
+EPAM Systems
+EPAM Systems
+
+Lodz
+
+Remote
+
+APIs and Integration Engineer
+28d left
+Undisclosed Salary
+Managed File Transfer (MFT)
+webMethods Integration Server
+ServU Gateway
+PCS Gateway
+SFTP
+FTPS
+Python
+Bash
+Mid
+Any
+Full-time
+EPAM Systems
+EPAM Systems
+
+Wroclaw
+
+Remote
+
+APIs and Integration Engineer
+28d left
+Undisclosed Salary
+webMethods Integration Server
+Managed File Transfer
+ServU Gateway
+PCS Gateway
+SFTP
+FTPS
+XML
+Python
+Mid
+Any
+Full-time
+
+EPAM Systems | Katowice | Remote
+APIs and Integration Engineer | https://justjoin.it/job-offer/epam-systems-apis-and-integration-engineer-katowice-erp
+28d left | Undisclosed Salary | MFT, ServU Gateway, PCS Gateway, webMethods Integration Server, SFTP, FTPS, Python, Flat-file Transformations, Bash, Powershell | Mid, Any, Full-time
+
+Andersen | Remote
+SIEM Administrator / Engineer | https://justjoin.it/job-offer/andersen-siem-administrator-engineer-warszawa-security
+New | 14 400 - 28 400 PLN/month | Cybersecurity, SIEM, Microsoft Sentinel, Splunk ES, IBM QRadar, Elastic Security, syslog, CEF, API | Mid, Permanent, Full-time
+
+Andersen | Remote
+QA Automation Engineer (Python) | https://justjoin.it/job-offer/andersen-qa-automation-engineer-python--warsaw-testing-e4dc6688
+New | 10 205,26 - 14 130,36 PLN/month | AQA Python, Appium, Retail Banking | Mid, Permanent, Full-time
+
+emagine Polska | Lisbon | Remote
+AWS Administrator | https://justjoin.it/job-offer/emagine-polska-aws-administrator-lisbon-devops-1f9b1e45
+29d left | Undisclosed Salary | Security, Linux, Python, Provisioning, CI/CD, Disaster Recovery, Cloud, Jenkins, BCP, IAM | Mid, Any, Full-time
+
+Veeva Systems | Remote (Super offer)
+Associate Technical Consultant (Entry-Level) | https://justjoin.it/job-offer/veeva-systems-associate-technical-consultant-entry-level--warszawa-support
+28d left | 10 000 PLN/month | Excel, Time Management, Customer Support, Critical thinking, Programming, Salesforce, Technical consulting, Problem Solving | Junior, Permanent, Full-time
+
