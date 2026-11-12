@@ -1,5 +1,6 @@
 from job_agent.dedup import deduplicate, offer_key
 from job_agent.models import Offer
+from job_agent.dedup import deduplicate, normalize, offer_key
 
 
 def make(company: str, title: str, **kwargs) -> Offer:
@@ -35,3 +36,11 @@ def test_keeps_first_occurrence_in_order():
     result = deduplicate(offers)
     assert [o.company for o in result] == ["A", "B"]
     assert result[0].url == "https://first"
+
+
+def test_normalize_lowercases_and_collapses_whitespace():
+    assert normalize("  Analytics \t Engineer ") == "analytics engineer"
+
+
+def test_trailing_space_in_company_does_not_matter():
+    assert offer_key(make("FarmaProm ", "X")) == offer_key(make("FarmaProm", "X"))
