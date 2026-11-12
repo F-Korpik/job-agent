@@ -14,6 +14,7 @@ def extract_offers(text: str, portal: str = "justjoin.it") -> tuple[list[Offer],
     print(f"[extract] tekst podzielony na {len(chunks)} kawałków")
     offers, errors = [], []
     for n, chunk in enumerate(chunks, start=1):
+        print(f"[extract] kawałek {n}/{len(chunks)}")
         data = complete_json(PROMPT, chunk)
         for i, raw in enumerate(data.get("offers", [])):
             try:
