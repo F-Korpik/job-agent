@@ -2,6 +2,7 @@ from pathlib import Path
 
 from pydantic import ValidationError
 
+from .chunk import chunk_lines
 from .llm import complete_json
 from .models import Offer
 
@@ -9,11 +10,19 @@ PROMPT = (Path(__file__).parent.parent / "prompts" / "extract_offers.md").read_t
 
 
 def extract_offers(text: str, portal: str = "justjoin.it") -> tuple[list[Offer], list[str]]:
-    data = complete_json(PROMPT, text)
+    chunks = chunk_lines(text)
+    print(f"[extract] tekst podzielony na {len(chunks)} kawałków")
     offers, errors = [], []
-    for i, raw in enumerate(data.get("offers", [])):
-        try:
-            offers.append(Offer(**{**raw, "portal": portal}))
-        except ValidationError as e:
-            errors.append(f"oferta {i} ({raw.get('title', '?')}): {e.errors()[0]['msg']}")
+    for n, chunk in enumerate(chunks, start=1):
+        data = complete_json(PROMPT, chunk)
+        for i, raw in enumerate(data.get("offers", [])):
+            try:
+                offers.append(Offer(**{**raw, "portal": portal}))
+            except ValidationError as e:
+                err = e.errors()[0]
+                field = ".".join(str(part) for part in err["loc"])
+                errors.append(
+                    f"kawałek {n}, oferta {i} ({raw.get('title', '?')}): "
+                    f"pole {field} = {err['input']!r} → {err['msg']}"
+                )
     return offers, errors

@@ -13,3 +13,4 @@ Zasady:
 - contract_types normalizuj do: "UoP" (Permanent, umowa o pracę), "B2B", "UZ" (Mandate), "UoD" (Specific-task), "staż" (Internship). "Any" → ["UoP", "B2B"].
 - Pomiń elementy interfejsu strony: filtry, liczniki, nagłówki, przyciski.
 - Duplikaty zostaw. Deduplikacja jest w dalszym kroku.
+- Tekst może być fragmentem dłuższej listy. Ofertę uciętą na początku lub końcu fragmentu (brakuje firmy, tytułu albo większości danych) pomiń: pojawi się w całości w sąsiednim fragmencie.
