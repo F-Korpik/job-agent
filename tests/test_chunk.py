@@ -1,6 +1,6 @@
 import pytest
 
-from job_agent.chunk import chunk_lines, offer_boundaries
+from job_agent.chunk import chunk_by_offers, chunk_lines, offer_boundaries
 
 
 RAW = [
@@ -65,3 +65,34 @@ def test_neighbouring_chunks_overlap():
 def test_overlap_must_be_smaller_than_chunk():
     with pytest.raises(ValueError):
         chunk_lines(make_text(100), max_lines=10, overlap=10)
+
+
+def make_raw_offers(n: int) -> str:
+    lines = []
+    for k in range(n):
+        lines += [f"Firma {k}", f"Firma {k}", "", "Remote", "", f"Tytuł {k}", "Python", "Full-time"]
+    return "\n".join(lines)
+
+
+def test_offers_are_never_split():
+    chunks = chunk_by_offers(make_raw_offers(10), max_lines=20)
+    for chunk in chunks:
+        assert chunk.splitlines()[-1] == "Full-time"
+
+
+def test_every_line_exactly_once_in_order():
+    text = make_raw_offers(10)
+    chunks = chunk_by_offers(text, max_lines=20)
+    assert "\n".join(chunks) == text
+
+
+def test_chunks_respect_limit():
+    for chunk in chunk_by_offers(make_raw_offers(10), max_lines=20):
+        assert len(chunk.splitlines()) <= 20
+
+
+def test_text_without_boundaries_falls_back_to_overlap():
+    text = make_text(100)
+    assert chunk_by_offers(text, max_lines=40) == chunk_lines(text, max_lines=40)
+
+
