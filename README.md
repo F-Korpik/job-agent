@@ -14,7 +14,7 @@ Job alerts arrive as noisy, inconsistent text: the same offer is posted in sever
 
 ```mermaid
 flowchart LR
-    A[Text file<br/>list or e-mail] --> B[Chunking<br/>with overlap]
+    A[Text file<br/>list or e-mail] --> B[Chunking at<br/>offer boundaries]
     B --> C[LLM extraction<br/>Groq, JSON mode]
     C --> D[Validation<br/>pydantic]
     D --> E[Grounding check<br/>company in source text]
@@ -29,7 +29,7 @@ flowchart LR
 
 | Stage | Status |
 |---|---|
-| Chunking with overlap | done |
+| Chunking at offer boundaries | done |
 | LLM extraction with retries (invalid JSON, rate limits) | done |
 | Schema validation | done |
 | Grounding check | done |
@@ -48,16 +48,21 @@ Extraction is measured against hand-verified expected results (`tests/eval/expec
 |---|---|---|---|---|---|
 | Poznań, compact format (14 offers) | without chunking | last offer lost in 3 of 4 runs | – | – | – |
 | Poznań, compact format (14 offers) | chunking with overlap | 14/14 in 3 of 3 runs | 0 | 100% | 100% |
-| Remote, raw format (32 offers) | chunking, all offers | 23/32 | 10 | 68% | 72% |
-| Remote, raw format (32 offers) | **chunking + grounding, verified offers only** | 23/32 | **0** | **100%** | 72% |
+| Remote, raw format (32 offers) | fixed-size chunks with overlap | 23/32 | 10 | 68% | 72% |
+| Remote, raw format (32 offers) | fixed-size chunks + grounding, verified offers only | 23/32 | **0** | **100%** | 72% |
+| Remote, raw format (32 offers) | **chunks cut at offer boundaries** | **30/32** | 2* | **94%** | **94%** |
 
-**Key result:** the grounding check flagged exactly the 11 wrong offers and none of the correct ones, raising precision from 68% to 100% with no loss of recall.
+\* One of the two is the correct company under a shortened name ("Helvetia Baloise Group" for "Warsaw Hub @ Helvetia Baloise Group"); the other was flagged as uncertain by the grounding check.
+
+**Key results:**
+- The grounding check flagged exactly the 11 wrong offers and none of the correct ones, raising precision from 68% to 100% with no loss of recall.
+- A controlled experiment showed that an offer ending exactly at a chunk boundary was always dropped (0/2 runs at the end of a chunk, 2/2 in the middle). Cutting chunks only between offers raised recall from 72% to 94% and cut wrong company assignments from 10 to 2.
 
 Limitations: the test set is small (46 unique offers) and LLM output varies between runs; the remote-list figures come from single runs.
 
 ## Design decisions
 
-- **Chunking with overlap.** Long lists are split into 40-line chunks that overlap by 10 lines, so every offer appears whole in at least one chunk. Duplicates created by the overlap are removed by deduplication.
+- **Chunking at offer boundaries.** Long lists are split into chunks of up to 40 lines, cut only where an offer ends (a standalone "Full-time" line in raw lists, a blank line in compact lists, "Aplikuj" in e-mails). Every offer lands whole in exactly one chunk. Fixed-size chunks with overlap are kept only as a fallback for text with no detectable boundaries. Longer chunks were tested and rejected: at 60 lines the model started dropping offers (9/14).
 - **Verification in code, not in the prompt.** The model sometimes attaches an offer to the neighbouring company. Instead of asking the model to be more careful, a deterministic check confirms that the company appears in the source text just above the job title. Offers that fail are flagged as uncertain.
 - **Deduplication by company + title.** The same offer is published under several URLs, so URLs cannot identify it.
 - **Missing data means "unknown".** An offer without a salary range is not treated as underpaid.
@@ -68,7 +73,7 @@ Limitations: the test set is small (46 unique offers) and LLM output varies betw
 
 ```
 job_agent/         pipeline code
-  chunk.py         splitting text into overlapping chunks
+  chunk.py         splitting text into chunks at offer boundaries
   extract.py       LLM extraction + validation + grounding
   grounding.py     checking the company against the source text
   dedup.py         normalisation and deduplication
