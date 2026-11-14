@@ -62,7 +62,7 @@ AI-Augmented IAM Security Engineer | https://justjoin.it/job-offer/epam-systems-
 28d left | Undisclosed Salary | Identity and Access Management, Privileged Access Management, SSO, SAML, OAuth 2.0, OpenId Connect, SCIM, LDAP | Mid, Any, Full-time
 
 Orange Polska | Hybrid
-Network Automation Leader for Microwave technology (3 listings: -devops, -python, -java) | https://justjoin.it/job-offer/orange-polska-network-automation-leader-for-microwave-technology--poznan-devops
+Network Automation Leader for Microwave technology | https://justjoin.it/job-offer/orange-polska-network-automation-leader-for-microwave-technology--poznan-devops
 14d / 28d / 14d left | Undisclosed Salary | Java, Python, CI/CD, GitLab, Kubernetes | Mid, Permanent, Full-time
 
 EPAM Systems | Poznan | Remote
