@@ -1,6 +1,44 @@
 import pytest
 
-from job_agent.chunk import chunk_lines
+from job_agent.chunk import chunk_lines, offer_boundaries
+
+
+RAW = [
+    "Sii", "Sii", "", "Remote", "", "Technical Lead — Data Science", "Python", "Full-time",
+    "Momentum", "Momentum", "", "Wrocław", "", "Remote", "", "Machine Learning Engineer", "Full-time",
+]
+
+COMPACT = [
+    "FarmaProm | Poznań | Hybrid",
+    "Analytics Engineer | https://justjoin.it/x",
+    "4d left | Undisclosed Salary | SQL | Mid, Permanent, Full-time",
+    "",
+    "Miele Global Services | Poznań | Remote",
+    "SAP Data Engineer | https://justjoin.it/y",
+    "10d left | 13 400 - 17 300 PLN/month | SAP | Mid, Permanent, Full-time",
+]
+
+MAIL = ["Cześć", "DCV Technologies", "AI/ML Engineer", "Aplikuj", "Link Group", "AI Engineer with French", "Aplikuj"]
+
+
+def test_raw_format_cuts_after_full_time_only():
+    assert offer_boundaries(RAW) == [7, 16]
+
+
+def test_compact_format_cuts_on_blank_lines():
+    assert offer_boundaries(COMPACT) == [3]
+
+
+def test_mail_format_cuts_after_aplikuj():
+    assert offer_boundaries(MAIL) == [3, 6]
+
+
+def test_markers_are_normalized():
+    assert offer_boundaries(["Oferta", "  FULL-TIME  "]) == [1]
+
+
+def test_no_boundaries():
+    assert offer_boundaries(["jedna linijka", "druga linijka"]) == []
 
 
 def make_text(n: int) -> str:
