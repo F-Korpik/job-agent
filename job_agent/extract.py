@@ -2,7 +2,7 @@ from pathlib import Path
 
 from pydantic import ValidationError
 
-from .chunk import chunk_lines
+from .chunk import chunk_by_offers
 from .grounding import company_is_grounded
 from .llm import complete_json
 from .models import Offer
@@ -12,7 +12,7 @@ PROMPT = (Path(__file__).parent.parent / "prompts" / "extract_offers.md").read_t
 
 
 def extract_offers(text: str, portal: str = "justjoin.it") -> tuple[list[Offer], list[str]]:
-    chunks = chunk_lines(text)
+    chunks = chunk_by_offers(text)
     print(f"[extract] tekst podzielony na {len(chunks)} kawałków")
     offers, errors = [], []
     for n, chunk in enumerate(chunks, start=1):
