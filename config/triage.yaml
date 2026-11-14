@@ -1,0 +1,46 @@
+# Reguły triage'u: odrzucenia automatyczne i flagi do ręcznego przeglądu w Arkuszu.
+# Słowa dopasowywane jako całe słowa, bez względu na wielkość liter.
+# Kolejność: najpierw reject, potem flag. Brak danych w ofercie = oferta przechodzi.
+# Decyzje: 14.11.2026 (role analityczne: decyzja centrali).
+
+min_salary_uop_monthly: 8300
+
+reject:
+  analyst_roles:
+    reason: rola analityczna, poza ścieżką
+    fields: [title]
+    words: [Data Analyst, DWH Analyst, Pricing Analyst, BI Analyst, Reporting Analyst]
+  leadership:
+    reason: rola liderska
+    fields: [title]
+    words: [Lead, Leader, Manager, Head]
+  sap_sas:
+    reason: zamknięty ekosystem SAP/SAS
+    fields: [title, tags]
+    words: [SAP, ABAP, SAS]
+  security:
+    reason: security
+    fields: [title, tags]
+    words: [Security, Cybersecurity, SIEM, IAM, OWASP, SAST]
+  talent_pool:
+    reason: brak konkretnego stanowiska
+    fields: [title]
+    words: [Talent Pool]
+  trainee:
+    reason: program stażowy, wynagrodzenie poniżej minimum
+    fields: [title]
+    words: [Trainee, Intern, Internship]
+  qa:
+    reason: testy/QA, poza ścieżką
+    fields: [title]
+    words: [QA, Tester]
+
+flag:
+  analyst_other:
+    reason: rola analityczna, poza ścieżką – decyzja ręczna (wyjątek przy SQL/Python, elemencie DE, widełkach ≥ 11 tys.)
+    fields: [title]
+    words: [Analyst]
+  classic_ml:
+    reason: klasyczne ML w tagach – sprawdź, czy wymagane
+    fields: [tags]
+    words: [TensorFlow, PyTorch, Keras, JAX]
