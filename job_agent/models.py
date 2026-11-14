@@ -15,3 +15,4 @@ class Offer(BaseModel):
     tags: list[str] = Field(default_factory=list)
     url: str | None = None
     portal: str = "justjoin.it"
+    grounded: bool | None = None

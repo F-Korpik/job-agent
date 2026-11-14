@@ -21,7 +21,10 @@ def main() -> None:
     summary = []
     for run in range(1, args.runs + 1):
         offers, errors = extract_offers(text)
-        r = compare(expected, deduplicate(offers))
+        unique = deduplicate(offers)
+        r = compare(expected, unique)
+        sure = [o for o in unique if o.grounded]
+        rs = compare(expected, sure)
         summary.append(f"{len(r.correct)}/{r.expected_count}")
 
         print(f"\n=== przebieg {run}/{args.runs} ===")
@@ -30,6 +33,10 @@ def main() -> None:
             f"zgubione {len(r.missing)} | śmieciowe {len(r.extra)} | błędy walidacji {len(errors)}"
         )
         print(f"recall {r.recall:.0%} | precision {r.precision:.0%}")
+        print(
+            f"tylko pewne: {len(sure)}/{len(unique)} ofert | poprawne {len(rs.correct)} | "
+            f"zła firma {len(rs.wrong_company)} | recall {rs.recall:.0%} | precision {rs.precision:.0%}"
+        )
         for title, got, exp in r.wrong_company:
             print(f"  zła firma:  {title!r}: jest {got!r}, powinno być {exp!r}")
         for company, title in r.missing:
