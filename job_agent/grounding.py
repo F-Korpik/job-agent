@@ -5,7 +5,7 @@ from .dedup import normalize
 WINDOW = 10
 
 
-def _contains_word(text: str, phrase: str) -> bool:
+def contains_word(text: str, phrase: str) -> bool:
     return re.search(rf"(?<!\w){re.escape(phrase)}(?!\w)", text) is not None
 
 
@@ -17,6 +17,6 @@ def company_is_grounded(company: str, title: str, source: str, window: int = WIN
     for i, line in enumerate(lines):
         if title_n in line:
             above = lines[max(0, i - window): i + 1]
-            if any(_contains_word(candidate, company_n) for candidate in above):
+            if any(contains_word(candidate, company_n) for candidate in above):
                 return True
     return False

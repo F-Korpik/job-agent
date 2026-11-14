@@ -35,3 +35,22 @@ def test_missing_offer():
 def test_extra_offer():
     r = compare(EXPECTED, [offer("G2A", "AI Automation Engineer"), offer("Acme", "Mamy dla Ciebie dobre wieści")])
     assert r.extra == [("Acme", "Mamy dla Ciebie dobre wieści")]
+
+
+def test_empty_company_is_never_correct():
+    r = compare(EXPECTED, [offer("", "Machine Learning Engineer")])
+    assert r.correct == []
+    assert len(r.wrong_company) == 1
+
+
+def test_shortened_company_name_counts_as_correct():
+    expected = [("Warsaw Hub @ Helvetia Baloise Group", "SAS Application Engineer")]
+    r = compare(expected, [offer("Helvetia Baloise Group", "SAS Application Engineer")])
+    assert len(r.correct) == 1
+    assert r.missing == []
+
+
+def test_different_company_is_still_wrong():
+    expected = [("Relativity", "Advanced AI Engineer")]
+    r = compare(expected, [offer("EPAM Systems", "Advanced AI Engineer")])
+    assert len(r.wrong_company) == 1

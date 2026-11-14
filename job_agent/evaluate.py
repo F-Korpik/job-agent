@@ -3,7 +3,14 @@ from dataclasses import dataclass, field
 from pathlib import Path
 
 from .dedup import normalize
+from .grounding import contains_word
 from .models import Offer
+
+
+def same_company(a: str, b: str) -> bool:
+    if not a or not b:
+        return False
+    return a == b or contains_word(a, b) or contains_word(b, a)
 
 
 @dataclass
@@ -43,9 +50,9 @@ def compare(expected: list[tuple[str, str]], got: list[Offer]) -> EvalResult:
         expected_companies = companies_by_title.get(title)
         if expected_companies is None:
             result.extra.append((offer.company, offer.title))
-        elif company in expected_companies:
+        elif (match := next((c for c in expected_companies if same_company(company, c)), None)) is not None:
             result.correct.append((offer.company, offer.title))
-            matched.add((company, title))
+            matched.add((match, title))
         else:
             result.wrong_company.append((offer.title, offer.company, ", ".join(sorted(expected_companies))))
             wrong_titles.add(title)
