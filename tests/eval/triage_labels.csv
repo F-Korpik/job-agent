@@ -1,42 +1,42 @@
-firma,tytul,zrodlo,decyzja,kategoria,powod,kierunkowa,pelna_tresc
-Allegro,Junior Big Data Engineer (Java / Python),allegro_careers,dobra,ok,"junior DE na GCP/BigQuery; luki: GCP/BigQuery, testy, SQL",nie,allegro_junior_big_data_engineer
-Allegro,Data Engineer - Data Platform,allegro_careers,dobra,ok,"DE mid, jakość danych i anomalie; luka: Spark (must)",nie,allegro_data_engineer_data_platform
-FarmaProm,Analytics Engineer,justjoin.it,dobra,ok,"nice-to-have pasują (API, Docker, AI, GCP); must słabo (SQL advanced, DWH, modelowanie)",nie,farmaprom_analytics_engineer
-G2A,AI Automation Engineer,justjoin.it,dobra,ok,"najlepsze dopasowanie: LLM API, integracje REST/OAuth; luki: n8n, 3 lata",nie,g2a_ai_automation_engineer
-Capgemini Polska,GenAI Engineer in Banking/Financial industry,justjoin.it,dobra,ok,"zasięg: LLM workflows pasują; brak doświadczenia w finansach (must), chmura, very good SQL",nie,capgemini_genai_engineer_banking
-Egala,"Software Engineer (Mid-level, Full-stack)",justjoin.it,zla,fullstack,"Django + React/MobX + Celery, 3–5 lat; 2/8 must",nie,egala_software_engineer_fullstack
-Momentum,Machine Learning Engineer,justjoin.it,zla,ml_klasyczne,"klasyczne ML, TensorFlow/Keras, LangChain/LlamaIndex jako must",nie,momentum_ml_engineer
-Relativity,Advanced AI Engineer,justjoin.it,zla,za_duza_luka,"agent runtime (LangGraph, MCP, Azure, K8s), 3+ lata",tak,relativity_advanced_ai_engineer
-Sii,Technical Lead — Data Science,justjoin.it,zla,lider,rola liderska,nie,
-Capgemini Invent,GCP AI Developer,justjoin.it,zla,ml_klasyczne,klasyczne ML (PyTorch/TF/Vertex),nie,
-Miele Global Services,SAP Data Engineer,justjoin.it,zla,sap,SAP/ABAP,nie,
-Sollers Consulting,Data Analyst,justjoin.it,zla,analityk,rola analityczna,nie,
-Sollers Consulting,Pricing Analyst,justjoin.it,zla,analityk,rola analityczna,nie,
-G2A,Data Analyst,justjoin.it,zla,analityk,rola analityczna,nie,
-Transition Technologies MS,DWH Analyst,justjoin.it,zla,analityk,rola analityczna,nie,
-emagine Polska,Data Analyst (Junior / Mid) - Remote - Portugal,justjoin.it,zla,analityk,rola analityczna,nie,
-cloudatus,Data Scientist / Machine Learning Engineer,justjoin.it,zla,ml_klasyczne,"data science, statystyka, R, AWS",nie,
-EPAM Systems,JIRA Service Management (JSM) Migration Engineer,justjoin.it,zla,inna_specjalizacja,Atlassian/ITSM,nie,
-EPAM Systems,AI-Augmented IAM Security Engineer,justjoin.it,zla,security,IAM,nie,
-EPAM Systems,APIs and Integration Engineer,justjoin.it,zla,inna_specjalizacja,webMethods/MFT,nie,
-Orange Polska,Network Automation Leader for Microwave technology,justjoin.it,zla,lider,"rola liderska, Java",nie,
-Andersen,SIEM Administrator / Engineer,justjoin.it,zla,security,SIEM,nie,
-Accenture,Secure AI Innovation Engineer,justjoin.it,zla,security,security,nie,
-Accenture,Application Security Specialist,justjoin.it,zla,security,application security,nie,
-Andersen,QA Automation Engineer (Python),justjoin.it,zla,qa,QA bankowe (Appium),nie,
-emagine Polska,AWS Administrator,justjoin.it,zla,infra_ops,infra/ops,nie,
-C&F,Azure Support Engineer,justjoin.it,zla,infra_ops,infra/ops,nie,
-emagine Polska,Join our Talent Pool - Cloud Operations / Platform,justjoin.it,zla,infra_ops,infra/ops,nie,
-AVSystem,Site Reliability Engineer,justjoin.it,zla,infra_ops,infra/ops,nie,
-emagine Polska,Data Engineer (Airflow / Snowflake),justjoin.it,zla,za_duza_luka,Airflow/Snowflake/AWS,nie,
-Sii,Data Engineer with Microsoft Azure,justjoin.it,zla,za_duza_luka,Spark/Azure/Databricks/Kafka,nie,
-Xebia,GCP Data Engineer,justjoin.it,zla,za_duza_luka,GCP/BigQuery/PySpark/Airflow/dbt,tak,
-emagine Polska,Junior Data Engineer – Oracle Cloud (OCI) | International Project (Chile),justjoin.it,zla,za_duza_luka,"OCI, projekt w Chile",nie,
-Veeva Systems,Associate Technical Consultant (Entry-Level),justjoin.it,zla,inna_specjalizacja,wsparcie/Salesforce,nie,
-EPAM Systems,Python Trainee,justjoin.it,zla,ponizej_minimum,"program trainee, wynagrodzenie prawdopodobnie poniżej minimum",nie,
-TELTONIKA POLAND,CAN/OBD Solutions Embedded Software Developer (Mid/Senior),justjoin.it,zla,inna_specjalizacja,C/embedded,nie,
-Maisa AI,Software Engineer (Foundational AI),justjoin.it,zla,ml_research,ML research/deep learning,nie,
-emagine Polska,Computer Vision Engineer (Deep Learning),justjoin.it,zla,ml_research,deep learning,nie,
-Warsaw Hub @ Helvetia Baloise Group,SAS Application Engineer in Finance & Accounting Platforms,justjoin.it,zla,sap,"SAS/SAP, niemiecki",nie,
-emagine Polska,Transaction Monitoring Engineer,justjoin.it,zla,inna_specjalizacja,AML/finanse,nie,
-emagine Polska,"Join Our Talent Pool – Banking Data, Digital & Cyber Specialists",justjoin.it,zla,inna_specjalizacja,talent pool bankowy,nie,
+firma,tytul,zrodlo,decyzja,kategoria,powod,kierunkowa,pelna_tresc,poziom,umowa,widelki_min,widelki_max,okres,tryb,tagi
+Allegro,Junior Big Data Engineer (Java / Python),allegro_careers,dobra,ok,"junior DE na GCP/BigQuery; luki: GCP/BigQuery, testy, SQL",nie,allegro_junior_big_data_engineer,Junior,UoP,11200,15250,miesiąc,hybrid,Python;SQL;Java;Kotlin;APIs;Docker;Git;CI/CD;Airflow;GCP
+Allegro,Data Engineer - Data Platform,allegro_careers,dobra,ok,"DE mid, jakość danych i anomalie; luka: Spark (must)",nie,allegro_data_engineer_data_platform,Mid,UoP,14600,20825,miesiąc,hybrid,Big Data;Python;Spark;Scala;AI
+FarmaProm,Analytics Engineer,justjoin.it,dobra,ok,"nice-to-have pasują (API, Docker, AI, GCP); must słabo (SQL advanced, DWH, modelowanie)",nie,farmaprom_analytics_engineer,Mid,UoP,,,,hybrid,SQL;Python;BigQuery;Snowflake;Redshift
+G2A,AI Automation Engineer,justjoin.it,dobra,ok,"najlepsze dopasowanie: LLM API, integracje REST/OAuth; luki: n8n, 3 lata",nie,g2a_ai_automation_engineer,Mid,UoP,,,,remote,AI
+Capgemini Polska,GenAI Engineer in Banking/Financial industry,justjoin.it,dobra,ok,"zasięg: LLM workflows pasują; brak doświadczenia w finansach (must), chmura, very good SQL",nie,capgemini_genai_engineer_banking,Mid,UoP,,,,hybrid,SQL;Python;Prompt Engineering;LLM;Agentic AI;Generative AI;AWS;Azure
+Egala,"Software Engineer (Mid-level, Full-stack)",justjoin.it,zla,fullstack,"Django + React/MobX + Celery, 3–5 lat; 2/8 must",nie,egala_software_engineer_fullstack,Mid,UoP,10000,14000,miesiąc,office,CI;Git;Docker;REST;SOAP;PostgreSQL;Django;Python
+Momentum,Machine Learning Engineer,justjoin.it,zla,ml_klasyczne,"klasyczne ML, TensorFlow/Keras, LangChain/LlamaIndex jako must",nie,momentum_ml_engineer,Mid,UoP,8330,12500,miesiąc,remote,Python;TensorFlow;Keras;Pandas;LLM frameworks;matplotlib;PyTorch;fastapi
+Relativity,Advanced AI Engineer,justjoin.it,zla,za_duza_luka,"agent runtime (LangGraph, MCP, Azure, K8s), 3+ lata",tak,relativity_advanced_ai_engineer,Mid,UoP,188000,282000,rok,remote,Python;Langchain;Langgraph;Large Language Models;PostgreSQL;Azure;Docker;Model Context Protocol;RAG;Pulumi
+Sii,Technical Lead — Data Science,justjoin.it,zla,lider,rola liderska,nie,,Mid,UoP,,,,remote,XGBoost;scikit-learn;NumPy;Cloud Computing;Data platforms;Pandas;Python
+Capgemini Invent,GCP AI Developer,justjoin.it,zla,ml_klasyczne,klasyczne ML (PyTorch/TF/Vertex),nie,,Mid,UoP,,,,hybrid,Machine Learning;MLOps;PyTorch;JAX;TensorFlow;Vertex AI;GCP
+Miele Global Services,SAP Data Engineer,justjoin.it,zla,sap,SAP/ABAP,nie,,Mid,UoP,13400,17300,miesiąc,remote,SAP;Data Engineering;SQL;ABAP;SAP BW / BW/4HANA;SAP Datasphere;Python
+Sollers Consulting,Data Analyst,justjoin.it,zla,analityk,rola analityczna,nie,,Mid,UoP,,,,hybrid,Snowflake;Databricks;SQL;MS Excel;Python
+Sollers Consulting,Pricing Analyst,justjoin.it,zla,analityk,rola analityczna,nie,,Mid,UoP,,,,hybrid,pricing analytics;Generalized Linear Models;Agile;Python;R
+G2A,Data Analyst,justjoin.it,zla,analityk,rola analityczna,nie,,Mid,UoP,,,,remote,SQL;Python;Tableau
+Transition Technologies MS,DWH Analyst,justjoin.it,zla,analityk,rola analityczna,nie,,Mid,UoP,,,,remote,SQL;DWH concepts;ETL processes;Data modeling;data validation;Power BI;Stakeholder Communication;Agile methodology;Snowflake;Power Apps
+emagine Polska,Data Analyst (Junior / Mid) - Remote - Portugal,justjoin.it,zla,analityk,rola analityczna,nie,,Mid,UoP;B2B,,,,remote,Data analysis;Project Management;SQL;Python;Business Intelligence (BI);Atlassian JIRA;Agile;Machine Learning (ML);Microsoft Power BI;Tableau
+cloudatus,Data Scientist / Machine Learning Engineer,justjoin.it,zla,ml_klasyczne,"data science, statystyka, R, AWS",nie,,Mid,UoP,12000,17000,miesiąc,remote,GenAI;Machine Learning;AWS;Statistics;R;Azure;Pandas;SQL;Python;Data Science
+EPAM Systems,JIRA Service Management (JSM) Migration Engineer,justjoin.it,zla,inna_specjalizacja,Atlassian/ITSM,nie,,Mid,UoP;B2B,,,,remote,Jira Service Management;ServiceNow;Atlassian Cloud;data migration;Data Mapping;Jira REST API;Automation Rules;ETL;Python;JavaScript
+EPAM Systems,AI-Augmented IAM Security Engineer,justjoin.it,zla,security,IAM,nie,,Mid,UoP;B2B,,,,remote,Identity and Access Management;Privileged Access Management;SSO;SAML;OAuth 2.0;OpenId Connect;SCIM;LDAP
+EPAM Systems,APIs and Integration Engineer,justjoin.it,zla,inna_specjalizacja,webMethods/MFT,nie,,Mid,UoP;B2B,,,,remote,webMethods Integration Server;Managed File Transfer (MFT);ServU Gateway;PCS Gateway;SFTP;FTPS;Python;Bash;Powershell;XML
+Orange Polska,Network Automation Leader for Microwave technology,justjoin.it,zla,lider,"rola liderska, Java",nie,,Mid,UoP,,,,hybrid,Java;Python;CI/CD;GitLab;Kubernetes
+Andersen,SIEM Administrator / Engineer,justjoin.it,zla,security,SIEM,nie,,Mid,UoP,14400,28400,miesiąc,remote,Cybersecurity;SIEM;Microsoft Sentinel;Splunk ES;IBM QRadar;Elastic Security;syslog;CEF;API
+Accenture,Secure AI Innovation Engineer,justjoin.it,zla,security,security,nie,,Mid,UoP,,,,remote,OWASP;AI;LLMs;Azure;CI/CD;Security
+Accenture,Application Security Specialist,justjoin.it,zla,security,application security,nie,,Mid,UoP,,,,remote,OWASP;SQL;Azure;GitHub;Java;SAST;AWS;Bitbucket;Jenkins;injection
+Andersen,QA Automation Engineer (Python),justjoin.it,zla,qa,QA bankowe (Appium),nie,,Mid,UoP,10205,14130,miesiąc,remote,AQA Python;Appium;Retail Banking
+emagine Polska,AWS Administrator,justjoin.it,zla,infra_ops,infra/ops,nie,,Mid,UoP;B2B,,,,remote,Security;Linux;Python;Provisioning;CI/CD;Disaster Recovery;Cloud;Jenkins;BCP;IAM
+C&F,Azure Support Engineer,justjoin.it,zla,infra_ops,infra/ops,nie,,Mid,UoP,,,,remote,Azure DevOps;Microsoft Azure Cloud;Azure Databricks;Power BI;Azure Data Factory;Azure Monitor;Log Analytics;ITIL;CI/CD
+emagine Polska,Join our Talent Pool - Cloud Operations / Platform,justjoin.it,zla,infra_ops,infra/ops,nie,,Mid,UoP;B2B,,,,remote,Security;Python;Operations;Active Directory (AD);CI/CD;Process Optimization;Cloud;Microsoft Platform;Microsoft Windows Server;Identity Access Management (IAM)
+AVSystem,Site Reliability Engineer,justjoin.it,zla,infra_ops,infra/ops,nie,,Mid,UoP,16600,24900,miesiąc,remote,Linux;Networking;Python;Go;Kubernetes;Ansible;Terraform;Prometheus;MongoDB;Kafka
+emagine Polska,Data Engineer (Airflow / Snowflake),justjoin.it,zla,za_duza_luka,Airflow/Snowflake/AWS,nie,,Mid,UoP;B2B,,,,remote,SQL;Python;CI/CD;Git;Docker;Amazon Web Services (AWS);Kubernetes;Apache Airflow;Snowflake;Data Engineering
+Sii,Data Engineer with Microsoft Azure,justjoin.it,zla,za_duza_luka,Spark/Azure/Databricks/Kafka,nie,,Mid,UoP,,,,remote,Python;ETL/ELT;Apache Spark/PySpark;Microsoft Azure;Databricks;Snowflake;Apache Kafka;Apache Airflow
+Xebia,GCP Data Engineer,justjoin.it,zla,za_duza_luka,GCP/BigQuery/PySpark/Airflow/dbt,tak,,Mid,UoP,,,,remote,GCP;BigQuery;PySpark;Airflow;DBT
+emagine Polska,Junior Data Engineer – Oracle Cloud (OCI) | International Project (Chile),justjoin.it,zla,za_duza_luka,"OCI, projekt w Chile",nie,,Junior,UoP;B2B,,,,remote,Data Warehouse (DW);Python;Business Intelligence (BI);Operations;Artificial Intelligence (AI);Provisioning;strategy;Cloud;Microsoft Platform;Spark
+Veeva Systems,Associate Technical Consultant (Entry-Level),justjoin.it,zla,inna_specjalizacja,wsparcie/Salesforce,nie,,Junior,UoP,10000,10000,miesiąc,remote,Excel;Time Management;Customer Support;Critical thinking;Programming;Salesforce;Technical consulting;Problem Solving
+EPAM Systems,Python Trainee,justjoin.it,zla,ponizej_minimum,"program trainee, wynagrodzenie prawdopodobnie poniżej minimum",nie,,Junior,UoP;B2B,,,,remote,Python;Algorithms;Data Structures;Databases
+TELTONIKA POLAND,CAN/OBD Solutions Embedded Software Developer (Mid/Senior),justjoin.it,zla,inna_specjalizacja,C/embedded,nie,,Mid,UoP,14000,28000,miesiąc,remote,CAN;C;non-automotive sectors experience
+Maisa AI,Software Engineer (Foundational AI),justjoin.it,zla,ml_research,ML research/deep learning,nie,,Mid,UoP,,,,remote,PyTorch depth;Python;vLLM;SGLang;quantisation
+emagine Polska,Computer Vision Engineer (Deep Learning),justjoin.it,zla,ml_research,deep learning,nie,,Mid,UoP;B2B,,,,remote,Network;training;Python;maintenance;CI/CD;Cloud;Machine Learning (ML);Microsoft Azure;Deployment;TensorFlow
+Warsaw Hub @ Helvetia Baloise Group,SAS Application Engineer in Finance & Accounting Platforms,justjoin.it,zla,sap,"SAS/SAP, niemiecki",nie,,Mid,UoP,20000,22000,miesiąc,remote,SAS;SAP;German;SAS 9.4;SQL;JSON;Rest/SOAP;Python;Databricks
+emagine Polska,Transaction Monitoring Engineer,justjoin.it,zla,inna_specjalizacja,AML/finanse,nie,,Mid,UoP;B2B,,,,remote,Risk Management;Operations;Data Integration;Testing;Financial Services;Microsoft Platform;Stakeholder Management;Governance;Customer Due Diligence (CDD);Anti Money Laundering (AML)
+emagine Polska,"Join Our Talent Pool – Banking Data, Digital & Cyber Specialists",justjoin.it,zla,inna_specjalizacja,talent pool bankowy,nie,,Mid,UoP;B2B,,,,remote,Network;Security;C++;API (Application Programming Interface);Python;CRM;Artificial Intelligence (AI);Salesforce;Customer Relationship Management (CRM) Suite;Microsoft Dynamics
