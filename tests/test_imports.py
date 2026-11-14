@@ -13,6 +13,7 @@ MODULES = [
     "job_agent.models",
     "job_agent.__main__",
     "scripts.eval_extraction",
+    "job_agent.triage",
 ]
 
 
