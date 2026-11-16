@@ -12,6 +12,7 @@ class Offer(BaseModel):
     salary_min: int | None = None
     salary_max: int | None = None
     currency: str | None = None
+    salary_period: Literal["month", "year", "hour"] | None = None
     tags: list[str] = Field(default_factory=list)
     url: str | None = None
     portal: str = "justjoin.it"

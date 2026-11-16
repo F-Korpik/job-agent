@@ -9,11 +9,12 @@ reject:
   analyst_roles:
     reason: rola analityczna, poza ścieżką
     fields: [title]
-    words: [Data Analyst, DWH Analyst, Pricing Analyst, BI Analyst, Reporting Analyst]
+    words: [Data Analyst, DWH Analyst, Pricing Analyst, BI Analyst, Reporting Analyst,
+            Analityk danych, Analityczka danych, Analityk BI, Analityczka BI, Analityk raportowy]
   leadership:
     reason: rola liderska
     fields: [title]
-    words: [Lead, Leader, Manager, Head]
+    words: [Lead, Leader, Manager, Head, Lider, Liderka, Kierownik, Kierowniczka, Dyrektor]
   sap_sas:
     reason: zamknięty ekosystem SAP/SAS
     fields: [title, tags]
@@ -29,7 +30,7 @@ reject:
   trainee:
     reason: program stażowy, wynagrodzenie poniżej minimum
     fields: [title]
-    words: [Trainee, Intern, Internship]
+    words: [Trainee, Intern, Internship, Stażysta, Stażystka, Staż, Praktykant, Praktykantka, Praktyki]
   qa:
     reason: testy/QA, poza ścieżką
     fields: [title]
@@ -39,7 +40,7 @@ flag:
   analyst_other:
     reason: rola analityczna, poza ścieżką – decyzja ręczna (wyjątek przy SQL/Python, elemencie DE, widełkach ≥ 11 tys.)
     fields: [title]
-    words: [Analyst]
+    words: [Analyst, Analityk, Analityczka]
   classic_ml:
     reason: klasyczne ML w tagach – sprawdź, czy wymagane
     fields: [tags]

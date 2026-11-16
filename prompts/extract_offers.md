@@ -4,7 +4,8 @@ Wyciągnij KAŻDĄ ofertę i zwróć wyłącznie JSON w formacie:
 {"offers": [{"title": str, "company": str, "location": str|null,
   "work_mode": "remote"|"hybrid"|"office"|null, "contract_types": [str],
   "level": str|null, "salary_min": int|null, "salary_max": int|null,
-  "currency": str|null, "tags": [str], "url": str|null}]}
+  "currency": str|null, "tags": [str], "url": str|null}]},
+  "salary_period": "month"|"year"|"hour"|null
 
 Zasady:
 - Nie wymyślaj danych. Czego nie ma w tekście, to null albo pusta lista.
@@ -14,3 +15,4 @@ Zasady:
 - Pomiń elementy interfejsu strony: filtry, liczniki, nagłówki, przyciski.
 - Duplikaty zostaw. Deduplikacja jest w dalszym kroku.
 - Tekst może być fragmentem dłuższej listy. Pomiń tylko ofertę uciętą na POCZĄTKU fragmentu (brakuje jej nazwy firmy lub tytułu). Ostatnia oferta we fragmencie jest kompletna, nawet jeśli kończy się na ostatniej linijce – zwróć ją.
+- salary_period: "month" dla PLN/month, /mies., miesięcznie; "year" dla PLN/year, rocznie; "hour" dla /godz., /h. Bez kwoty lub bez informacji: null.
