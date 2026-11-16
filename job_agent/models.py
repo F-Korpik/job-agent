@@ -1,5 +1,6 @@
 from typing import Literal
-from pydantic import BaseModel, Field
+
+from pydantic import BaseModel, Field, field_validator
 
 
 class Offer(BaseModel):
@@ -17,3 +18,8 @@ class Offer(BaseModel):
     url: str | None = None
     portal: str = "justjoin.it"
     grounded: bool | None = None
+
+    @field_validator("work_mode", "salary_period", mode="before")
+    @classmethod
+    def _lowercase(cls, value):
+        return value.lower() if isinstance(value, str) else value
