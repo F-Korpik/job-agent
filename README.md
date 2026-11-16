@@ -24,7 +24,7 @@ flowchart LR
     H --> I[Google Sheets]
 
     classDef todo fill:#eee,stroke:#999,color:#666
-    class G,H,I todo
+    class H,I todo
 ```
 
 | Stage | Status |
@@ -36,7 +36,7 @@ flowchart LR
 | Deduplication | done |
 | Extraction evaluation against hand-checked ground truth | done |
 | CI (pytest on every push) | done |
-| Rule-based triage | planned |
+| Rule-based triage (rules in YAML, flags for manual review) | done |
 | LLM fit scoring | planned |
 | Google Sheets output | planned |
 
@@ -50,15 +50,15 @@ Extraction is measured against hand-verified expected results (`tests/eval/expec
 | Poznań, compact format (14 offers) | chunking with overlap | 14/14 in 3 of 3 runs | 0 | 100% | 100% |
 | Remote, raw format (32 offers) | fixed-size chunks with overlap | 23/32 | 10 | 68% | 72% |
 | Remote, raw format (32 offers) | fixed-size chunks + grounding, verified offers only | 23/32 | **0** | **100%** | 72% |
-| Remote, raw format (32 offers) | **chunks cut at offer boundaries** | **30/32** | 2* | **94%** | **94%** |
+| Remote, raw format (32 offers) | **chunks cut at offer boundaries** | **29–30/32** (2 runs) | 2 | **94%** | **91–94%** |
 
-\* One of the two is the correct company under a shortened name ("Helvetia Baloise Group" for "Warsaw Hub @ Helvetia Baloise Group"); the other was flagged as uncertain by the grounding check.
+Among offers that passed the grounding check, precision was 100% in both runs. Both wrong-company offers in the last row were flagged as uncertain by the grounding check, so no offer with a wrong company is reported as verified.
 
 **Key results:**
 - The grounding check flagged exactly the 11 wrong offers and none of the correct ones, raising precision from 68% to 100% with no loss of recall.
 - A controlled experiment showed that an offer ending exactly at a chunk boundary was always dropped (0/2 runs at the end of a chunk, 2/2 in the middle). Cutting chunks only between offers raised recall from 72% to 94% and cut wrong company assignments from 10 to 2.
 
-Limitations: the test set is small (46 unique offers) and LLM output varies between runs; the remote-list figures come from single runs.
+Limitations: the test set is small (46 unique offers) and LLM output varies between runs; the remote-list figures come from one or two runs.
 
 ## Design decisions
 
@@ -68,6 +68,7 @@ Limitations: the test set is small (46 unique offers) and LLM output varies betw
 - **Missing data means "unknown".** An offer without a salary range is not treated as underpaid.
 - **No scraping.** Input comes from e-mail alerts and text the user provides, in line with job-board terms of service.
 - **Free tier only.** Groq's free API tier, with handling for its per-minute token limits.
+- **Triage before the LLM.** Cheap, deterministic rules in `config/triage.yaml` reject offers that are clearly out of scope (analyst roles, SAP, security, leadership, B2B-only, UoP salary below threshold) before any LLM scoring. Rules reject only on a clear signal; missing data means the offer passes. Unclear cases (e.g. classic ML frameworks in tags) are flagged for manual review instead of rejected. On 41 hand-labelled offers, triage keeps all 5 good ones and rejects 18 of 36 bad ones.
 
 ## Project structure
 
@@ -81,6 +82,8 @@ job_agent/         pipeline code
   llm.py           Groq client with retries
   limits.py        reading Groq rate-limit messages
   models.py        Offer data model
+  triage.py        rule-based triage (rules in config/triage.yaml)
+config/            triage rules
 prompts/           LLM prompts
 scripts/           evaluation and smoke tests (call the real API)
 tests/             unit tests (no API calls) and evaluation data
@@ -123,6 +126,6 @@ python -m pytest -v
 
 ## Roadmap
 
-- **v1 (30.11.2026):** triage rules tested against hand-labelled offers, LLM fit scoring, Google Sheets output, single end-to-end command.
-- **v1.5:** Gmail API (read-only) as an input source, scheduled runs in GitHub Actions, CV draft per offer.
+- **v1 (30.11.2026):** LLM fit scoring, Google Sheets output, single end-to-end command, scheduled background runs.
+- **v1.5:** Gmail API (read-only) as an input source, CV draft per offer.
 - **Later:** BigQuery storage, Airflow and dbt.

@@ -37,6 +37,8 @@ def main() -> None:
             f"tylko pewne: {len(sure)}/{len(unique)} ofert | poprawne {len(rs.correct)} | "
             f"zła firma {len(rs.wrong_company)} | recall {rs.recall:.0%} | precision {rs.precision:.0%}"
         )
+        for e in errors:
+            print(f"  walidacja:  {e}")
         for title, got, exp in r.wrong_company:
             print(f"  zła firma:  {title!r}: jest {got!r}, powinno być {exp!r}")
         for company, title in r.missing:
