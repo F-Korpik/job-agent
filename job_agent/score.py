@@ -10,6 +10,15 @@ PROMPT_PATH = ROOT / "prompts" / "score_offer.md"
 SKILLS_PATH = ROOT / "profile" / "skills.yaml"
 
 
+BANDS = {"docelowy": (60, 100), "pokrewny": (25, 55), "inny": (0, 25)}
+
+
+def clamp_to_band(score: Score) -> Score:
+    low, high = BANDS[score.direction]
+    clamped = min(max(score.score, low), high)
+    return score.model_copy(update={"score": clamped})
+
+
 def load_skills(path: Path = SKILLS_PATH) -> dict:
     with path.open(encoding="utf-8") as f:
         return yaml.safe_load(f)
@@ -45,4 +54,5 @@ def describe_offer(offer: Offer) -> str:
 
 
 def score_offer(offer: Offer, system_prompt: str) -> Score:
-    return Score(**complete_json(system_prompt, describe_offer(offer)))
+    raw = Score(**complete_json(system_prompt, describe_offer(offer)))
+    return clamp_to_band(raw)

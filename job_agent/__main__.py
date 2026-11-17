@@ -31,7 +31,7 @@ def main() -> None:
             print(f"{n:>{width}} ✓   ? | {o.company[:22]:22} | {o.title[:45]:45} | błąd oceny: {e.errors()[0]['msg']}")
             continue
         print(f"{n:>{width}} ✓ {s.score:3} | {o.company[:22]:22} | {o.title[:45]:45} | {sal:18} | {'; '.join(result.flags)}")
-        print(f"{'':>{width}}         {s.summary}")
+        print(f"{'':>{width}}         [{s.direction}] {s.summary}")
         if s.gaps:
             print(f"{'':>{width}}         braki: {', '.join(s.gaps)}")
     print(f"\n{total} ofert, {len(offers)} po deduplikacji, {rejected} odrzuconych przez triage, {len(errors)} błędów walidacji")

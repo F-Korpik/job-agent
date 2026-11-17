@@ -23,9 +23,10 @@ Technologii spoza listy kandydat nie zna.
 4. Oceniaj wyłącznie na podstawie danych oferty. Brak informacji nie obniża oceny.
 
 ## Pola odpowiedzi
+- direction: kierunek roli z punktu 1: "docelowy", "pokrewny" albo "inny".
 - gaps: tylko nazwy technologii z tytułu lub tagów oferty, których kandydat nie zna albo zna na poziomie "brak" lub "początkujący". Bez umów, trybu pracy i ogólników ("doświadczenie w chmurze", "zaawansowane ML"). Najwyżej 6 pozycji.
 - red_flags: sygnały z oferty, że praca może być męcząca lub nie pasować: wielu klientów naraz, dyżury, "gaszenie pożarów", wymagane ponad 3 lata doświadczenia. Bez takich sygnałów: pusta lista.
 - summary: 1–2 zdania po polsku, konkretnie o tej ofercie.
 
 Zwróć wyłącznie JSON:
-{"score": int, "summary": str, "gaps": [str], "red_flags": [str]}
+{"score": int, "direction": str, "summary": str, "gaps": [str], "red_flags": [str]}
