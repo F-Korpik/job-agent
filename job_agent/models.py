@@ -23,3 +23,10 @@ class Offer(BaseModel):
     @classmethod
     def _lowercase(cls, value):
         return value.lower() if isinstance(value, str) else value
+
+
+class Score(BaseModel):
+    score: int = Field(ge=0, le=100)
+    summary: str
+    gaps: list[str] = Field(default_factory=list)
+    red_flags: list[str] = Field(default_factory=list)

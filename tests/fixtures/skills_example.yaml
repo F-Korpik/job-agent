@@ -1,0 +1,10 @@
+scale: [brak, początkujący, podstawowy, średniozaawansowany, zaawansowany]
+scoring_sections: [jezyki, ai]
+sections:
+  jezyki:
+    Python: średniozaawansowany
+    SQL: podstawowy
+  ai:
+    API LLM: średniozaawansowany
+  cad_cam:
+    SolidWorks: średniozaawansowany
