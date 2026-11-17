@@ -24,7 +24,7 @@ flowchart LR
     H --> I[Google Sheets]
 
     classDef todo fill:#eee,stroke:#999,color:#666
-    class H,I todo
+    class I todo
 ```
 
 | Stage | Status |
@@ -37,7 +37,7 @@ flowchart LR
 | Extraction evaluation against hand-checked ground truth | done |
 | CI (pytest on every push) | done |
 | Rule-based triage (rules in YAML, flags for manual review) | done |
-| LLM fit scoring | planned |
+| LLM fit scoring | done |
 | Google Sheets output | planned |
 
 ## Evaluation
@@ -64,11 +64,13 @@ Limitations: the test set is small (46 unique offers) and LLM output varies betw
 
 - **Chunking at offer boundaries.** Long lists are split into chunks of up to 40 lines, cut only where an offer ends (a standalone "Full-time" line in raw lists, a blank line in compact lists, "Aplikuj" in e-mails). Every offer lands whole in exactly one chunk. Fixed-size chunks with overlap are kept only as a fallback for text with no detectable boundaries. Longer chunks were tested and rejected: at 60 lines the model started dropping offers (9/14).
 - **Verification in code, not in the prompt.** The model sometimes attaches an offer to the neighbouring company. Instead of asking the model to be more careful, a deterministic check confirms that the company appears in the source text just above the job title. Offers that fail are flagged as uncertain.
+- **Triage before the LLM.** Cheap, deterministic rules in `config/triage.yaml` reject offers that are clearly out of scope (analyst roles, SAP, security, leadership, B2B-only, UoP salary below threshold) before any LLM scoring. Rules reject only on a clear signal; missing data means the offer passes. Unclear cases (e.g. classic ML frameworks in tags) are flagged for manual review instead of rejected. On 41 hand-labelled offers, triage keeps all 5 good ones and rejects 18 of 36 bad ones.
+- **Role direction first, score band enforced in code.** The model first classifies the role as target (data, analytics or AI engineering), adjacent or other, and only then scores skill overlap within that band (60–100, 25–55, 0–25). Code clamps the score to the band, so a full-stack offer with many matching tags cannot outrank a data engineering role. Without bands, the first version scored a full-stack role equal to a GenAI role, and the same offer posted twice got 30 and 58.
 - **Deduplication by company + title.** The same offer is published under several URLs, so URLs cannot identify it.
 - **Missing data means "unknown".** An offer without a salary range is not treated as underpaid.
 - **No scraping.** Input comes from e-mail alerts and text the user provides, in line with job-board terms of service.
 - **Free tier only.** Groq's free API tier, with handling for its per-minute token limits.
-- **Triage before the LLM.** Cheap, deterministic rules in `config/triage.yaml` reject offers that are clearly out of scope (analyst roles, SAP, security, leadership, B2B-only, UoP salary below threshold) before any LLM scoring. Rules reject only on a clear signal; missing data means the offer passes. Unclear cases (e.g. classic ML frameworks in tags) are flagged for manual review instead of rejected. On 41 hand-labelled offers, triage keeps all 5 good ones and rejects 18 of 36 bad ones.
+
 
 ## Project structure
 
@@ -81,7 +83,8 @@ job_agent/         pipeline code
   evaluate.py      comparison with expected results
   llm.py           Groq client with retries
   limits.py        reading Groq rate-limit messages
-  models.py        Offer data model
+  models.py        Offer and Scores data model
+  score.py         LLM fit scoring, clamped to the role's score band
   triage.py        rule-based triage (rules in config/triage.yaml)
 config/            triage rules
 prompts/           LLM prompts
@@ -106,7 +109,14 @@ GROQ_API_KEY=...
 GROQ_MODEL=openai/gpt-oss-120b
 ```
 
-Extract offers from a text file:
+Fit scoring reads a skills profile from `profile/skills.yaml`, which is personal and not part of the repo. To try it, copy the example profile:
+
+```bash
+mkdir profile
+copy tests\fixtures\skills_example.yaml profile\skills.yaml    # Windows; on Linux/macOS: cp tests/fixtures/skills_example.yaml profile/skills.yaml
+```
+
+Extract, triage and score offers from a text file:
 
 ```bash
 python -m job_agent tests/fixtures/jjit_poznan_2026-11-03.txt
@@ -126,6 +136,6 @@ python -m pytest -v
 
 ## Roadmap
 
-- **v1 (30.11.2026):** LLM fit scoring, Google Sheets output, single end-to-end command, scheduled background runs.
+- **v1 (30.11.2026):** Google Sheets output, single end-to-end command, scheduled background runs.
 - **v1.5:** Gmail API (read-only) as an input source, CV draft per offer.
 - **Later:** BigQuery storage, Airflow and dbt.
