@@ -15,6 +15,7 @@ MODULES = [
     "scripts.eval_extraction",
     "job_agent.triage",
     "job_agent.score",
+    "job_agent.sheets",
 ]
 
 
