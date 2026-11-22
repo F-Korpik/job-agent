@@ -1,4 +1,4 @@
-import sys
+import argparse
 from datetime import date
 from pathlib import Path
 
@@ -12,8 +12,13 @@ from .triage import load_rules, triage
 
 
 def main() -> None:
-    ws = open_worksheet()
-    text = Path(sys.argv[1]).read_text(encoding="utf-8")
+    parser = argparse.ArgumentParser(description="Ekstrakcja, triage i ocena ofert z pliku tekstowego.")
+    parser.add_argument("file", type=Path, help="plik z listą ofert albo treścią maila")
+    parser.add_argument("--no-sheet", action="store_true", help="tylko wypisz wynik, bez zapisu do arkusza")
+    args = parser.parse_args()
+
+    ws = None if args.no_sheet else open_worksheet()
+    text = args.file.read_text(encoding="utf-8")
     offers, errors = extract_offers(text)
     total = len(offers)
     offers = deduplicate(offers)
@@ -46,6 +51,9 @@ def main() -> None:
     for e in errors:
         print("  ", e)
 
+    if ws is None:
+        print("Arkusz: pominięty (--no-sheet)")
+        return
     added, skipped = append_new(ws, rows)
     print(f"Arkusz: dopisano {added}, pominięto {skipped} (już były w arkuszu)")
 

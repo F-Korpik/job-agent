@@ -124,6 +124,8 @@ Extract, triage and score offers from a text file, then append new ones to the s
 python -m job_agent tests/fixtures/jjit_poznan_2026-11-03.txt
 ```
 
+To try it without Google Sheets, add `--no-sheet`: results are only printed.
+
 Evaluate extraction against the expected results (uses the API; the remote list costs roughly a quarter of the daily free-tier token limit per run):
 
 ```bash
