@@ -65,15 +65,16 @@ def select_new(rows: list[list], existing_ids: list[str]) -> list[list]:
 
 def open_worksheet():
     client = gspread.service_account(filename=os.environ["GOOGLE_CREDENTIALS_FILE"])
-    return client.open_by_key(os.environ["SHEET_ID"]).worksheet("oferty")
-    
-
-def append_new(ws, rows: list[list]) -> tuple[int, int]:
+    ws = client.open_by_key(os.environ["SHEET_ID"]).worksheet("oferty")
     header = ws.row_values(1)
     if not header:
         ws.append_row(HEADERS)
     elif header != HEADERS:
         raise ValueError(f"Nagłówki w zakładce 'oferty' różnią się od oczekiwanych: {header}")
+    return ws
+    
+
+def append_new(ws, rows: list[list]) -> tuple[int, int]:
     existing_ids = ws.col_values(1)[1:]
     new = select_new(rows, existing_ids)
     if new:
