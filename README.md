@@ -22,9 +22,6 @@ flowchart LR
     F --> G[Triage rules]
     G --> H[LLM fit scoring]
     H --> I[Google Sheets]
-
-    classDef todo fill:#eee,stroke:#999,color:#666
-    class I todo
 ```
 
 | Stage | Status |
@@ -38,7 +35,7 @@ flowchart LR
 | CI (pytest on every push) | done |
 | Rule-based triage (rules in YAML, flags for manual review) | done |
 | LLM fit scoring | done |
-| Google Sheets output | planned |
+| Google Sheets output (deduplicated against existing rows) | done |
 
 ## Evaluation
 
@@ -85,6 +82,7 @@ job_agent/         pipeline code
   limits.py        reading Groq rate-limit messages
   models.py        Offer and Scores data model
   score.py         LLM fit scoring, clamped to the role's score band
+  sheets.py        Google Sheets output, skips offers already in the sheet
   triage.py        rule-based triage (rules in config/triage.yaml)
 config/            triage rules
 prompts/           LLM prompts
@@ -107,6 +105,8 @@ Create a `.env` file (see `.env.example`):
 ```
 GROQ_API_KEY=...
 GROQ_MODEL=openai/gpt-oss-120b
+GOOGLE_CREDENTIALS_FILE=service-account.json
+SHEET_ID=...
 ```
 
 Fit scoring reads a skills profile from `profile/skills.yaml`, which is personal and not part of the repo. To try it, copy the example profile:
@@ -116,7 +116,9 @@ mkdir profile
 copy tests\fixtures\skills_example.yaml profile\skills.yaml    # Windows; on Linux/macOS: cp tests/fixtures/skills_example.yaml profile/skills.yaml
 ```
 
-Extract, triage and score offers from a text file:
+Writing to Google Sheets needs a Google Cloud service account (no billing required): download its JSON key as `service-account.json` into the project folder, share your spreadsheet with the service account's e-mail as an editor, add an empty tab named `oferty`, and set `SHEET_ID` in `.env` (the part of the sheet URL between `/d/` and `/edit`). The header row is created on the first run.
+
+Extract, triage and score offers from a text file, then append new ones to the sheet:
 
 ```bash
 python -m job_agent tests/fixtures/jjit_poznan_2026-11-03.txt
@@ -136,6 +138,6 @@ python -m pytest -v
 
 ## Roadmap
 
-- **v1 (30.11.2026):** Google Sheets output, single end-to-end command, scheduled background runs.
+- **v1 (30.11.2026):** single end-to-end command, scheduled background runs.
 - **v1.5:** Gmail API (read-only) as an input source, CV draft per offer.
 - **Later:** BigQuery storage, Airflow and dbt.
