@@ -32,3 +32,23 @@ def test_failed_mail_is_not_marked_processed():
 def test_skipped_mail_is_marked_processed_with_zero_offers():
     results = [MailResult("x", "Reklama", "nfj_inne")]
     assert processed_mail_rows(results, TODAY)[0][4] == 0
+
+
+import pytest
+
+from job_agent.inbox import gmail_query, get_header
+
+
+def test_gmail_query():
+    assert gmail_query(3) == "label:oferty newer_than:3d"
+
+
+def test_gmail_query_rejects_zero_days():
+    with pytest.raises(ValueError):
+        gmail_query(0)
+
+
+def test_get_header_is_case_insensitive_and_defaults_to_empty():
+    payload = {"headers": [{"name": "Subject", "value": "Nowe oferty"}]}
+    assert get_header(payload, "subject") == "Nowe oferty"
+    assert get_header(payload, "From") == ""

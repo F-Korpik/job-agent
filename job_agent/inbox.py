@@ -27,3 +27,16 @@ def process_mails(mails: list[dict], handle) -> list[MailResult]:
 def processed_mail_rows(results: list[MailResult], today: date) -> list[list]:
     return [mail_row(r.message_id, r.mail_type, r.subject, len(r.rows), today)
             for r in results if r.error is None]
+
+
+def gmail_query(days: int, label: str = "oferty") -> str:
+    if days < 1:
+        raise ValueError("days musi być co najmniej 1")
+    return f"label:{label} newer_than:{days}d"
+
+
+def get_header(payload: dict, name: str) -> str:
+    for header in payload.get("headers", []):
+        if header["name"].lower() == name.lower():
+            return header["value"]
+    return ""
