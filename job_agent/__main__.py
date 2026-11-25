@@ -11,21 +11,11 @@ from .sheets import append_new, offer_to_row, open_worksheet
 from .triage import load_rules, triage
 
 
-def main() -> None:
-    parser = argparse.ArgumentParser(description="Ekstrakcja, triage i ocena ofert z pliku tekstowego.")
-    parser.add_argument("file", type=Path, help="plik z listą ofert albo treścią maila")
-    parser.add_argument("--no-sheet", action="store_true", help="tylko wypisz wynik, bez zapisu do arkusza")
-    args = parser.parse_args()
-
-    ws = None if args.no_sheet else open_worksheet()
-    text = args.file.read_text(encoding="utf-8")
+def process_text(text: str, rules: dict, scoring_prompt: str, today: date) -> list[list]:
     offers, errors = extract_offers(text)
     total = len(offers)
     offers = deduplicate(offers)
-    rules = load_rules()
-    scoring_prompt = build_prompt(load_skills())
     width = len(str(len(offers)))
-    today = date.today()
     rows = []
     rejected = 0
     for n, o in enumerate(offers, start=1):
@@ -50,6 +40,20 @@ def main() -> None:
     print(f"\n{total} ofert, {len(offers)} po deduplikacji, {rejected} odrzuconych przez triage, {len(errors)} błędów walidacji")
     for e in errors:
         print("  ", e)
+    return rows
+
+
+def main() -> None:
+    parser = argparse.ArgumentParser(description="Ekstrakcja, triage i ocena ofert z pliku tekstowego.")
+    parser.add_argument("file", type=Path, help="plik z listą ofert albo treścią maila")
+    parser.add_argument("--no-sheet", action="store_true", help="tylko wypisz wynik, bez zapisu do arkusza")
+    args = parser.parse_args()
+
+    ws = None if args.no_sheet else open_worksheet()
+    rules = load_rules()
+    scoring_prompt = build_prompt(load_skills())
+    text = args.file.read_text(encoding="utf-8")
+    rows = process_text(text, rules, scoring_prompt, date.today())
 
     if ws is None:
         print("Arkusz: pominięty (--no-sheet)")

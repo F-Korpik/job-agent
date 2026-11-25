@@ -19,6 +19,7 @@ MODULES = [
     "job_agent.gmail",
     "job_agent.mail_text",
     "job_agent.mail_types",
+    "job_agent.inbox",
 ]
 
 
