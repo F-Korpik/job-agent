@@ -44,3 +44,7 @@ def message_headers(service, message_id: str) -> dict:
         userId="me", id=message_id, format="metadata", metadataHeaders=["From", "Subject", "Date"]
     ).execute()
     return {h["name"]: h["value"] for h in message["payload"]["headers"]}
+
+
+def get_message(service, message_id: str) -> dict:
+    return service.users().messages().get(userId="me", id=message_id, format="full").execute()

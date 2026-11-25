@@ -17,6 +17,8 @@ MODULES = [
     "job_agent.score",
     "job_agent.sheets",
     "job_agent.gmail",
+    "job_agent.mail_text",
+    "job_agent.mail_types",
 ]
 
 
