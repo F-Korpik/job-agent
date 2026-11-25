@@ -1,0 +1,22 @@
+# Rozpoznawanie typu maila po nadawcy i temacie.
+# Reguły sprawdzane od góry; pierwsza pasująca wygrywa, więc dokładniejsze reguły (z tematem) muszą być wyżej.
+# process: true – mail idzie do ekstrakcji; false – pomijany, z informacją w wyniku.
+# Mail spoza listy jest pomijany jako "nieznany".
+types:
+  - name: pracuj_alert
+    sender: jobalert@wysylka.pracuj.pl
+    process: true
+  - name: pracuj_rekomendacje
+    sender: rekomendacje@wysylka.pracuj.pl
+    process: false
+  - name: nfj_alert
+    sender: notifications@nofluffjobs.com
+    subject: nowe oferty pracy
+    process: true
+  - name: nfj_inne
+    sender: notifications@nofluffjobs.com
+    process: false
+  - name: jjit_proponowane
+    sender: jobs@hello.justjoin.it
+    subject: proponowane oferty
+    process: true
