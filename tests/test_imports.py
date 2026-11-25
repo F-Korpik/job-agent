@@ -16,6 +16,7 @@ MODULES = [
     "job_agent.triage",
     "job_agent.score",
     "job_agent.sheets",
+    "job_agent.gmail",
 ]
 
 
