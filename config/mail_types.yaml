@@ -19,4 +19,4 @@ types:
   - name: jjit_proponowane
     sender: jobs@hello.justjoin.it
     subject: proponowane oferty
-    process: true
+    process: false   # 25.11: część tekstowa bez umowy i widełek, a oferty i tak tylko B2B
