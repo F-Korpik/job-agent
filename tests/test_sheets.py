@@ -33,3 +33,16 @@ def test_scored_offer():
 def test_select_new_skips_existing_and_repeats():
     rows = [["a", 1], ["b", 2], ["a", 3], ["c", 4]]
     assert select_new(rows, existing_ids=["b"]) == [["a", 1], ["c", 4]]
+
+
+from job_agent.sheets import MAIL_HEADERS, mail_row, unprocessed
+
+
+def test_unprocessed_skips_done_and_keeps_order():
+    assert unprocessed(["c", "a", "b"], processed_ids=["a"]) == ["c", "b"]
+
+
+def test_mail_row_matches_headers():
+    row = mail_row("id1", "nfj_alert", "\tNowe oferty pracy", 3, TODAY)
+    assert len(row) == len(MAIL_HEADERS)
+    assert row[3] == "Nowe oferty pracy"
