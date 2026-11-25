@@ -1,6 +1,10 @@
+import base64
+
 from datetime import date
 
 from job_agent.inbox import MailResult, process_mails, processed_mail_rows
+from job_agent.inbox import make_handler
+from job_agent.mail_types import load_mail_rules
 
 TODAY = date(2026, 11, 25)
 MAILS = [
@@ -52,3 +56,25 @@ def test_get_header_is_case_insensitive_and_defaults_to_empty():
     payload = {"headers": [{"name": "Subject", "value": "Nowe oferty"}]}
     assert get_header(payload, "subject") == "Nowe oferty"
     assert get_header(payload, "From") == ""
+
+
+def fake_message(sender, subject, text):
+    data = base64.urlsafe_b64encode(text.encode()).decode()
+    return {"payload": {"mimeType": "text/plain", "body": {"data": data},
+                        "headers": [{"name": "From", "value": sender}, {"name": "Subject", "value": subject}]}}
+
+
+def test_handler_processes_alert():
+    seen = []
+    msg = fake_message("No Fluff Jobs <notifications@nofluffjobs.com>", "Nowe oferty pracy, 2", "Data Engineer")
+    handle = make_handler(lambda _id: msg, load_mail_rules(), lambda text: seen.append(text) or [["row"]])
+    result = handle({"id": "m1"})
+    assert result.mail_type == "nfj_alert" and result.rows == [["row"]]
+    assert seen == ["Data Engineer"]
+
+
+def test_handler_skips_recommendations_without_calling_model():
+    msg = fake_message("Pracuj.pl <rekomendacje@wysylka.pracuj.pl>", "Oferta", "cokolwiek")
+    handle = make_handler(lambda _id: msg, load_mail_rules(), lambda text: 1 / 0)
+    result = handle({"id": "m2"})
+    assert result.mail_type == "pracuj_rekomendacje" and result.rows == []

@@ -2,6 +2,8 @@ from dataclasses import dataclass, field
 from datetime import date
 
 from .sheets import mail_row
+from .mail_text import message_text
+from .mail_types import classify
 
 
 @dataclass
@@ -40,3 +42,15 @@ def get_header(payload: dict, name: str) -> str:
         if header["name"].lower() == name.lower():
             return header["value"]
     return ""
+
+
+def make_handler(fetch, mail_rules: list[dict], process):
+    def handle(mail: dict) -> MailResult:
+        payload = fetch(mail["id"])["payload"]
+        subject = get_header(payload, "Subject")
+        mail_type = classify(get_header(payload, "From"), subject, mail_rules)
+        if not mail_type.process:
+            return MailResult(mail["id"], subject, mail_type.name)
+        rows = process(message_text(payload))
+        return MailResult(mail["id"], subject, mail_type.name, rows=rows)
+    return handle
