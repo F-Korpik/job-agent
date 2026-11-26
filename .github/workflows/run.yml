@@ -1,0 +1,36 @@
+name: job-agent
+
+on:
+  workflow_dispatch:
+  # schedule:
+  #   - cron: "15 6 * * *"   # codziennie 7:15 czasu polskiego zimą (cron jest w UTC)
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.14"
+          cache: pip
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+      - name: Files from secrets
+        env:
+          SERVICE_ACCOUNT_JSON: ${{ secrets.SERVICE_ACCOUNT_JSON }}
+          GMAIL_TOKEN_JSON: ${{ secrets.GMAIL_TOKEN_JSON }}
+          SKILLS_YAML: ${{ secrets.SKILLS_YAML }}
+        run: |
+          mkdir -p profile
+          printf '%s' "$SERVICE_ACCOUNT_JSON" > service-account.json
+          printf '%s' "$GMAIL_TOKEN_JSON" > gmail-token.json
+          printf '%s' "$SKILLS_YAML" > profile/skills.yaml
+      - name: Run job-agent
+        env:
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+          GROQ_MODEL: openai/gpt-oss-120b
+          GOOGLE_CREDENTIALS_FILE: service-account.json
+          SHEET_ID: ${{ secrets.SHEET_ID }}
+        run: python -m job_agent --gmail --days 2
