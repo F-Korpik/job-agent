@@ -4,7 +4,7 @@
 
 An LLM-powered pipeline that turns job-board listings and alert e-mails into structured, deduplicated and verified job offers, built as a portfolio project for data engineering with an LLM component.
 
-> **Status:** work in progress. Version 1 (target: 30.11.2026) covers the full path from a text file to a scored list of offers in Google Sheets. The parts marked *done* below already work and are covered by tests.
+> **Status:** version 1 (target: early December 2026) runs the full path from job-alert e-mails in Gmail to a scored, deduplicated list of offers in Google Sheets. Everything marked *done* below works and is covered by tests; the daily scheduled run is being set up.
 
 ## Why
 
@@ -14,7 +14,9 @@ Job alerts arrive as noisy, inconsistent text: the same offer is posted in sever
 
 ```mermaid
 flowchart LR
-    A[Text file<br/>list or e-mail] --> B[Chunking at<br/>offer boundaries]
+    G0[Gmail label 'oferty'<br/>read-only API] --> G1[Mail type rules<br/>alerts only]
+    G1 --> B[Chunking at<br/>offer boundaries]
+    A[Text file] --> B
     B --> C[LLM extraction<br/>Groq, JSON mode]
     C --> D[Validation<br/>pydantic]
     D --> E[Grounding check<br/>company in source text]
@@ -36,6 +38,9 @@ flowchart LR
 | Rule-based triage (rules in YAML, flags for manual review) | done |
 | LLM fit scoring | done |
 | Google Sheets output (deduplicated against existing rows) | done |
+| Gmail input (read-only; processed mails tracked in the sheet) | done |
+| Mail type recognition (alerts processed, ads and repeats skipped) | done |
+| Daily scheduled run in GitHub Actions | in progress |
 
 ## Evaluation
 
@@ -55,7 +60,7 @@ Among offers that passed the grounding check, precision was 100% in both runs. B
 - The grounding check flagged exactly the 11 wrong offers and none of the correct ones, raising precision from 68% to 100% with no loss of recall.
 - A controlled experiment showed that an offer ending exactly at a chunk boundary was always dropped (0/2 runs at the end of a chunk, 2/2 in the middle). Cutting chunks only between offers raised recall from 72% to 94% and cut wrong company assignments from 10 to 2.
 
-Limitations: the test set is small (46 unique offers) and LLM output varies between runs; the remote-list figures come from one or two runs.
+Limitations: the test set is small (46 unique offers) and LLM output varies between runs; the remote-list figures come from one or two runs. Offers from e-mail alerts carry less detail than job-board lists (usually no tech tags), so fit scores for them rely mostly on the job title.
 
 ## Design decisions
 
@@ -65,29 +70,36 @@ Limitations: the test set is small (46 unique offers) and LLM output varies betw
 - **Role direction first, score band enforced in code.** The model first classifies the role as target (data, analytics or AI engineering), adjacent or other, and only then scores skill overlap within that band (60–100, 25–55, 0–25). Code clamps the score to the band, so a full-stack offer with many matching tags cannot outrank a data engineering role. Without bands, the first version scored a full-stack role equal to a GenAI role, and the same offer posted twice got 30 and 58.
 - **Deduplication by company + title.** The same offer is published under several URLs, so URLs cannot identify it.
 - **Missing data means "unknown".** An offer without a salary range is not treated as underpaid.
+- **Read-only Gmail access.** The app uses only the `gmail.readonly` scope, so it cannot send, change or delete e-mails. Because it cannot label processed e-mails, their IDs are stored in a separate `maile` tab of the sheet and skipped before any LLM call.
+- **Skip before spending tokens.** Each e-mail is classified by sender and subject (`config/mail_types.yaml`). Recommendations, weekly digests and ads are skipped without calling the model; unknown senders are skipped, not treated as errors.
+- **One bad e-mail does not stop the run.** Errors are recorded per e-mail and the run continues. Failed e-mails are not marked as processed, so they are retried next time. If any e-mail failed, the program exits with an error code after saving the rest, which triggers GitHub's failure e-mail.
 - **No scraping.** Input comes from e-mail alerts and text the user provides, in line with job-board terms of service.
-- **Free tier only.** Groq's free API tier, with handling for its per-minute token limits.
-
+- **Free tier only.** Groq's free API tier, with handling for its per-minute token limits; Google Sheets and Gmail through free APIs without billing.
 
 ## Project structure
 
 ```
 job_agent/         pipeline code
   chunk.py         splitting text into chunks at offer boundaries
-  extract.py       LLM extraction + validation + grounding
-  grounding.py     checking the company against the source text
   dedup.py         normalisation and deduplication
   evaluate.py      comparison with expected results
-  llm.py           Groq client with retries
+  extract.py       LLM extraction + validation + grounding
+  gmail.py         Gmail API client (read-only), token refresh
+  grounding.py     checking the company against the source text
+  inbox.py         per-email processing, error isolation, Gmail query
   limits.py        reading Groq rate-limit messages
-  models.py        Offer and Scores data model
+  llm.py           Groq client with retries
+  mail_text.py     e-mail body as text (plain part or HTML converted)
+  mail_types.py    e-mail type rules (process or skip)
+  models.py        Offer and Score data models
   score.py         LLM fit scoring, clamped to the role's score band
   sheets.py        Google Sheets output, skips offers already in the sheet
   triage.py        rule-based triage (rules in config/triage.yaml)
-config/            triage rules
+config/            triage rules, e-mail type rules
 prompts/           LLM prompts
-scripts/           evaluation and smoke tests (call the real API)
+scripts/           evaluation, smoke tests and Gmail helpers (call real APIs)
 tests/             unit tests (no API calls) and evaluation data
+.github/workflows/ tests on every push; daily job-agent run
 ```
 
 ## Running locally
@@ -116,7 +128,7 @@ mkdir profile
 copy tests\fixtures\skills_example.yaml profile\skills.yaml    # Windows; on Linux/macOS: cp tests/fixtures/skills_example.yaml profile/skills.yaml
 ```
 
-Writing to Google Sheets needs a Google Cloud service account (no billing required): download its JSON key as `service-account.json` into the project folder, share your spreadsheet with the service account's e-mail as an editor, add an empty tab named `oferty`, and set `SHEET_ID` in `.env` (the part of the sheet URL between `/d/` and `/edit`). The header row is created on the first run.
+Writing to Google Sheets needs a Google Cloud service account (no billing required): download its JSON key as `service-account.json` into the project folder, share your spreadsheet with the service account's e-mail as an editor, add empty tabs named `oferty` and `maile`, and set `SHEET_ID` in `.env` (the part of the sheet URL between `/d/` and `/edit`). Header rows are created on the first run.
 
 Extract, triage and score offers from a text file, then append new ones to the sheet:
 
@@ -138,8 +150,19 @@ Run the unit tests (no API key needed):
 python -m pytest -v
 ```
 
+## Automatic mode
+
+`python -m job_agent --gmail` reads new e-mails from the Gmail label `oferty` (last 2 days by default, `--days N` to change), skips those already listed in the `maile` tab, processes job alerts and appends new offers to the sheet. Add `--no-sheet` to only print results.
+
+Gmail setup (one time):
+1. In Google Cloud, enable the Gmail API and configure the OAuth consent screen (external, scope `gmail.readonly`). In production mode an unverified personal app shows a warning at sign-in that the owner can skip; in testing mode the refresh token expires after 7 days.
+2. Create an OAuth client of type *Desktop app* and save its JSON as `oauth-client.json`.
+3. Run `python -m scripts.gmail_list` once and sign in. This creates `gmail-token.json`, which is refreshed automatically afterwards.
+
+The scheduled run (`.github/workflows/run.yml`) uses these repository secrets: `GROQ_API_KEY`, `SHEET_ID`, `SERVICE_ACCOUNT_JSON`, `GMAIL_TOKEN_JSON` (contents of `gmail-token.json`) and `SKILLS_YAML`. Files are recreated from secrets at the start of the run; nothing secret is stored in the repository.
+
 ## Roadmap
 
-- **v1 (30.11.2026):** single end-to-end command, scheduled background runs.
-- **v1.5:** Gmail API (read-only) as an input source, CV draft per offer.
+- **v1 (early December 2026):** daily scheduled run in GitHub Actions, verified by three consecutive automatic runs.
+- **Next:** cleaning job-board badges from titles (e.g. "Nowość!"), grounding for e-mail formats where the company is below the title, more cautious scoring of offers without tech tags, CV draft per offer.
 - **Later:** BigQuery storage, Airflow and dbt.
